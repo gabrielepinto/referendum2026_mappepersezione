@@ -76,9 +76,9 @@ body::before {
 
 .hero h1 {
   margin: 12px 0 18px;
-  max-width: 18ch;
-  font-size: clamp(2.35rem, 4.4vw, 5rem);
-  line-height: 0.94;
+  max-width: 24ch;
+  font-size: clamp(1.45rem, 2.4vw, 2.6rem);
+  line-height: 1.05;
 }
 
 .hero-meta {
@@ -219,14 +219,16 @@ a {
 .city-tabs {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
 }
 
 .city-tab {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 14px;
+  padding: 14px 18px;
+  min-width: 110px;
+  font-size: 0.98rem;
   border-radius: 999px;
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.03);
@@ -272,7 +274,8 @@ a {
 }
 
 .map-frame {
-  height: 500px;
+  height: min(70vw, 520px);
+  min-height: 360px;
   border-top: 1px solid var(--line);
   background: #dfe6ec;
 }
@@ -325,6 +328,10 @@ a {
   border-color: rgba(255, 255, 255, 0.1) !important;
 }
 
+.leaflet-control-attribution a {
+  color: var(--accent) !important;
+}
+
 .leaflet-popup-content-wrapper,
 .leaflet-popup-tip {
   background: #0d1722;
@@ -361,6 +368,7 @@ a {
   }
 
   .map-frame {
-    height: 400px;
+    height: min(78vw, 430px);
+    min-height: 320px;
   }
 }

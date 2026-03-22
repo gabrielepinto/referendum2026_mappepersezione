@@ -100,6 +100,13 @@ function renderCityTabs() {
   });
 }
 
+function getSlotLabel(slot) {
+  if (slot === "12") return "Domenica ore 12";
+  if (slot === "19") return "Domenica ore 19";
+  if (slot === "15") return "Lunedì ore 15";
+  return `Ore ${slot}`;
+}
+
 function updateHeader(city) {
   document.getElementById("current-city").textContent = city.label;
   document.getElementById("current-kicker").textContent =
@@ -121,9 +128,14 @@ function renderDownloads(city) {
 function ensureMap() {
   if (!currentMap) {
     currentMap = L.map("map-current", {
+      preferCanvas: true,
       zoomControl: true,
       scrollWheelZoom: false
     });
+
+    currentMap.attributionControl.setPrefix(
+      'Elaborazioni di <a href="https://www.gabrielepinto.com" target="_blank" rel="noreferrer">Gabriele Pinto</a> | Dati: risultati per sezione <a href="https://elezioni.interno.gov.it/" target="_blank" rel="noreferrer">eligendo</a> poligoni <a href="https://github.com/gabrielepinto/dati-sezioni-elettorali" target="_blank" rel="noreferrer">datisezionielettorali</a> |'
+    );
 
     L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
       subdomains: "abcd",
@@ -131,6 +143,21 @@ function ensureMap() {
       attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
     }).addTo(currentMap);
+
+    const legend = L.control({ position: "bottomright" });
+    legend.onAdd = function () {
+      const div = L.DomUtil.create("div", "map-legend");
+      div.innerHTML = [
+        "<strong>Affluenza</strong>",
+        '<div class="legend-row"><span class="legend-swatch" style="background:#243b6b"></span><span>&lt; 25%</span></div>',
+        '<div class="legend-row"><span class="legend-swatch" style="background:#2f6c9e"></span><span>25-35%</span></div>',
+        '<div class="legend-row"><span class="legend-swatch" style="background:#2f9f9c"></span><span>35-45%</span></div>',
+        '<div class="legend-row"><span class="legend-swatch" style="background:#57c785"></span><span>45-55%</span></div>',
+        '<div class="legend-row"><span class="legend-swatch" style="background:#b8f28f"></span><span>&gt; 55%</span></div>'
+      ].join("");
+      return div;
+    };
+    legend.addTo(currentMap);
   }
 
   return currentMap;
@@ -160,10 +187,31 @@ function loadCityDataScript(city) {
 function turnoutRecordToLines(record) {
   const turnout = record?.turnout || {};
   return [
-    `Affluenza ore 12: ${formatPercent(turnout["12"])}`,
-    `Affluenza ore 15: ${formatPercent(turnout["15"])}`,
-    `Affluenza ore 19: ${formatPercent(turnout["19"])}`
+    `${getSlotLabel("12")}: ${formatPercent(turnout["12"])}`,
+    `${getSlotLabel("19")}: ${formatPercent(turnout["19"])}`,
+    `${getSlotLabel("15")}: ${formatPercent(turnout["15"])}`
   ];
+}
+
+function computeCityAverages(lookup) {
+  const slots = ["12", "19", "15"];
+  const averages = {};
+
+  slots.forEach((slot) => {
+    const values = [];
+    lookup.forEach((record) => {
+      const value = record?.turnout?.[slot];
+      if (typeof value === "number" && !Number.isNaN(value)) {
+        values.push(value);
+      }
+    });
+
+    averages[slot] = values.length
+      ? values.reduce((sum, value) => sum + value, 0) / values.length
+      : null;
+  });
+
+  return averages;
 }
 
 function formatPercent(value) {
@@ -177,28 +225,36 @@ function colorFromTurnout(value) {
   if (typeof value !== "number" || Number.isNaN(value)) {
     return "#94a3b8";
   }
-  if (value < 25) return "#1f3947";
-  if (value < 35) return "#2d5d69";
-  if (value < 45) return "#4e8b7b";
-  if (value < 55) return "#98c379";
-  return "#f2c14e";
+  if (value < 25) return "#243b6b";
+  if (value < 35) return "#2f6c9e";
+  if (value < 45) return "#2f9f9c";
+  if (value < 55) return "#57c785";
+  return "#b8f28f";
+}
+
+function getLatestTurnoutValue(record) {
+  const turnout = record?.turnout || {};
+  if (typeof turnout["15"] === "number" && !Number.isNaN(turnout["15"])) return turnout["15"];
+  if (typeof turnout["19"] === "number" && !Number.isNaN(turnout["19"])) return turnout["19"];
+  if (typeof turnout["12"] === "number" && !Number.isNaN(turnout["12"])) return turnout["12"];
+  return null;
 }
 
 function styleFeature(feature, lookup) {
   const section = Number(feature?.properties?.SEZIONE);
   const record = lookup.get(section);
-  const turnout19 = record?.turnout?.["19"] ?? null;
+  const turnoutValue = getLatestTurnoutValue(record);
 
   return {
-    color: "#1d2a34",
-    weight: 0.35,
-    opacity: 0.7,
-    fillColor: VIEW_MODE === "results" ? "#3b4654" : colorFromTurnout(turnout19),
+    color: "rgba(18, 28, 38, 0.18)",
+    weight: 0.12,
+    opacity: 0.25,
+    fillColor: VIEW_MODE === "results" ? "#3b4654" : colorFromTurnout(turnoutValue),
     fillOpacity: VIEW_MODE === "results" ? 0.35 : 0.84
   };
 }
 
-function popupHtml(cityLabel, feature, lookup) {
+function popupHtml(cityLabel, feature, lookup, cityAverages) {
   const section = Number(feature?.properties?.SEZIONE);
   const record = lookup.get(section) || {
     section,
@@ -218,7 +274,10 @@ function popupHtml(cityLabel, feature, lookup) {
   return [
     `<strong>${cityLabel}</strong>`,
     `Sezione: ${record.name}`,
-    ...turnoutRecordToLines(record)
+    ...turnoutRecordToLines(record),
+    `Media in città - Domenica ore 12: ${formatPercent(cityAverages["12"])}`,
+    `Media in città - Domenica ore 19: ${formatPercent(cityAverages["19"])}`,
+    `Media in città - Lunedì ore 15: ${formatPercent(cityAverages["15"])}`
   ].join("<br>");
 }
 
@@ -233,9 +292,30 @@ function buildLookup(payload) {
   return lookup;
 }
 
+function inferAvailableTurnoutSlots(payload) {
+  const declared = Array.isArray(payload?.meta?.turnout_slots) ? payload.meta.turnout_slots : [];
+  if (declared.length) {
+    return declared;
+  }
+
+  const found = new Set();
+  const sections = Array.isArray(payload?.sections) ? payload.sections : [];
+  sections.forEach((section) => {
+    const turnout = section?.turnout || {};
+    Object.entries(turnout).forEach(([slot, value]) => {
+      if (typeof value === "number" && !Number.isNaN(value)) {
+        found.add(slot);
+      }
+    });
+  });
+
+  return Array.from(found).sort((a, b) => Number(a) - Number(b));
+}
+
 function renderLayer(city, payload) {
   const map = ensureMap();
   const lookup = buildLookup(payload);
+  const cityAverages = computeCityAverages(lookup);
 
   if (currentLayer) {
     currentMap.removeLayer(currentLayer);
@@ -243,20 +323,21 @@ function renderLayer(city, payload) {
   }
 
   currentLayer = L.geoJSON(payload.geojson, {
+    smoothFactor: 0,
     style: (feature) => styleFeature(feature, lookup),
     onEachFeature: (feature, layer) => {
-      layer.bindPopup(popupHtml(city.label, feature, lookup));
+      layer.bindPopup(popupHtml(city.label, feature, lookup, cityAverages));
     }
   }).addTo(map);
 
-  map.fitBounds(currentLayer.getBounds(), { padding: [10, 10] });
+  map.fitBounds(currentLayer.getBounds(), { padding: [10, 10], maxZoom: 12 });
 
   if (VIEW_MODE === "results") {
     setStatus("Pagina risultati pronta");
   } else {
-    const availableSlots = payload?.meta?.turnout_slots || [];
+    const availableSlots = inferAvailableTurnoutSlots(payload);
     const label = availableSlots.length
-      ? `Affluenza aggiornata: ${availableSlots.map((slot) => `ore ${slot}`).join(", ")}`
+      ? `Affluenza aggiornata: ${availableSlots.map((slot) => getSlotLabel(slot)).join(", ")}`
       : "Affluenza disponibile";
     setStatus(label);
   }

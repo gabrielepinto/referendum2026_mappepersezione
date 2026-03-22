@@ -6,3 +6,5 @@
 "genova":"https://elezioni.interno.gov.it/risultati/20260322/referendum/votanti/italia/01070340250",
 "firenze":"https://elezioni.interno.gov.it/risultati/20260322/referendum/votanti/italia/01090300170",
 "palermo":"https://elezioni.interno.gov.it/risultati/20260322/referendum/votanti/italia/01190550510"
+"reggiocalabria":"https://elezioni.interno.gov.it/risultati/20260322/referendum/votanti/italia/01180670630"
+"taranto":"https://elezioni.interno.gov.it/risultati/20260322/referendum/votanti/italia/01160780270"
