@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mappe risultati per sezione elettorale delle principali città Italiane - Referendum 2026</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-view="results">
+    <main class="page-shell">
+      <section class="hero">
+        <p class="hero-kicker">Referendum 2026</p>
+        <h1>Mappe risultati per sezione elettorale delle principali città Italiane - Referendum 2026</h1>
+        <div class="hero-meta">
+          <p>
+            Elaborazioni di
+            <a href="https://www.gabrielepinto.com" target="_blank" rel="noreferrer">Gabriele Pinto</a>
+          </p>
+          <p>
+            Per approfondire
+            <a href="https://github.com/gabrielepinto/dati-sezioni-elettorali" target="_blank" rel="noreferrer">https://github.com/gabrielepinto/dati-sezioni-elettorali</a>.
+          </p>
+          <p>Ultimo aggiornamento, Domenica 22/03/2026, ore 19</p>
+        </div>
+        <div class="social-row" aria-label="Profili social">
+          <a class="social-link" href="https://x.com/gabrieleaopinto" target="_blank" rel="noreferrer" aria-label="Twitter / X">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M18.9 2H22l-6.77 7.74L23 22h-6.1l-4.78-6.97L6.02 22H3l7.24-8.28L1 2h6.25l4.32 6.3L18.9 2Zm-1.07 18h1.69L6.33 3.9H4.52L17.83 20Z"></path>
+            </svg>
+            <span>Twitter</span>
+          </a>
+          <a class="social-link" href="https://it.linkedin.com/in/gabriele-pinto-53a122b7" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.96 1.96 0 1 0 5.3 6.92 1.96 1.96 0 0 0 5.25 3ZM20.44 12.78c0-3.46-1.85-5.07-4.33-5.07-1.99 0-2.89 1.1-3.39 1.87V8.5H9.34c.04.72 0 11.5 0 11.5h3.38v-6.42c0-.34.02-.68.12-.92.27-.67.9-1.36 1.95-1.36 1.37 0 1.92 1.03 1.92 2.54V20h3.38l.35-7.22Z"></path>
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+        <nav class="view-tabs" aria-label="Selezione vista">
+          <a class="view-tab" href="./index.html">Affluenza</a>
+          <a class="view-tab is-active" href="./results.html">Risultati</a>
+        </nav>
+      </section>
+
+      <section class="city-panel">
+        <div>
+          <p class="legend-label">Città</p>
+          <h2>Seleziona una città</h2>
+        </div>
+        <nav class="city-tabs" id="city-tabs" aria-label="Selezione città"></nav>
+      </section>
+
+      <section class="legend-panel">
+        <div>
+          <p class="legend-label">Vista pronta</p>
+          <h2>Scrutinio per sezione</h2>
+        </div>
+        <div class="legend-note">
+          Pagina già impostata per i risultati. Quando arriveranno i dati, useremo gli stessi poligoni e la stessa navigazione per città.
+        </div>
+      </section>
+
+      <section class="map-card">
+        <header>
+          <div>
+            <p class="city-kicker" id="current-kicker">Risultati per sezione</p>
+            <h2 id="current-city">Roma</h2>
+          </div>
+          <p class="map-status" id="status-current">Caricamento...</p>
+        </header>
+        <div class="map-frame" id="map-current"></div>
+        <div class="downloads-panel" id="downloads-panel"></div>
+      </section>
+
+      <footer class="site-footer">
+        <p>
+          Elaborazioni di
+          <a href="https://www.gabrielepinto.com" target="_blank" rel="noreferrer">Gabriele Pinto</a>
+        </p>
+        <p>
+          Dati
+          <a href="https://elezioni.interno.gov.it/" target="_blank" rel="noreferrer">Eligendo</a>
+        </p>
+        <p>
+          Poligoni
+          <a href="https://github.com/gabrielepinto/dati-sezioni-elettorali" target="_blank" rel="noreferrer">https://github.com/gabrielepinto/dati-sezioni-elettorali</a>
+        </p>
+      </footer>
+    </main>
+
+    <script>
+      window.CITY_DATA = window.CITY_DATA || {};
+    </script>
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="main.js"></script>
+  </body>
+</html>

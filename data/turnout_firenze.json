@@ -1,0 +1,2130 @@
+﻿{
+    "city":  "firenze",
+    "updated_at":  "2026-03-22T19:00:00+01:00",
+    "sections":  [
+                     {
+                         "section":  1,
+                         "name":  "Sezione 1",
+                         "turnout12":  19.34,
+                         "turnout19":  43.71
+                     },
+                     {
+                         "section":  2,
+                         "name":  "Sezione 2",
+                         "turnout12":  16.28,
+                         "turnout19":  40.38
+                     },
+                     {
+                         "section":  3,
+                         "name":  "Sezione 3",
+                         "turnout12":  18.88,
+                         "turnout19":  45.8
+                     },
+                     {
+                         "section":  4,
+                         "name":  "Sezione 4",
+                         "turnout12":  16.21,
+                         "turnout19":  40.09
+                     },
+                     {
+                         "section":  5,
+                         "name":  "Sezione 5",
+                         "turnout12":  21.99,
+                         "turnout19":  67.54
+                     },
+                     {
+                         "section":  6,
+                         "name":  "Sezione 6",
+                         "turnout12":  20.12,
+                         "turnout19":  41.86
+                     },
+                     {
+                         "section":  7,
+                         "name":  "Sezione 7",
+                         "turnout12":  20.25,
+                         "turnout19":  49.21
+                     },
+                     {
+                         "section":  8,
+                         "name":  "Sezione 8",
+                         "turnout12":  23.8,
+                         "turnout19":  49.33
+                     },
+                     {
+                         "section":  9,
+                         "name":  "Sezione 9",
+                         "turnout12":  16.74,
+                         "turnout19":  45.31
+                     },
+                     {
+                         "section":  10,
+                         "name":  "Sezione 10",
+                         "turnout12":  20.36,
+                         "turnout19":  45.31
+                     },
+                     {
+                         "section":  11,
+                         "name":  "Sezione 11",
+                         "turnout12":  18.84,
+                         "turnout19":  40.11
+                     },
+                     {
+                         "section":  12,
+                         "name":  "Sezione 12",
+                         "turnout12":  17.41,
+                         "turnout19":  51.79
+                     },
+                     {
+                         "section":  13,
+                         "name":  "Sezione 13",
+                         "turnout12":  19.74,
+                         "turnout19":  44
+                     },
+                     {
+                         "section":  14,
+                         "name":  "Sezione 14",
+                         "turnout12":  16.67,
+                         "turnout19":  40.65
+                     },
+                     {
+                         "section":  15,
+                         "name":  "Sezione 15",
+                         "turnout12":  21.1,
+                         "turnout19":  46.38
+                     },
+                     {
+                         "section":  16,
+                         "name":  "Sezione 16",
+                         "turnout12":  16.01,
+                         "turnout19":  40.71
+                     },
+                     {
+                         "section":  17,
+                         "name":  "Sezione 17",
+                         "turnout12":  13.17,
+                         "turnout19":  42.41
+                     },
+                     {
+                         "section":  18,
+                         "name":  "Sezione 18",
+                         "turnout12":  17.74,
+                         "turnout19":  46.16
+                     },
+                     {
+                         "section":  19,
+                         "name":  "Sezione 19",
+                         "turnout12":  22.05,
+                         "turnout19":  51.41
+                     },
+                     {
+                         "section":  20,
+                         "name":  "Sezione 20",
+                         "turnout12":  20.52,
+                         "turnout19":  53.7
+                     },
+                     {
+                         "section":  21,
+                         "name":  "Sezione 21",
+                         "turnout12":  20.26,
+                         "turnout19":  48.69
+                     },
+                     {
+                         "section":  22,
+                         "name":  "Sezione 22",
+                         "turnout12":  23.81,
+                         "turnout19":  52.01
+                     },
+                     {
+                         "section":  23,
+                         "name":  "Sezione 23",
+                         "turnout12":  17.45,
+                         "turnout19":  43.12
+                     },
+                     {
+                         "section":  24,
+                         "name":  "Sezione 24",
+                         "turnout12":  16.96,
+                         "turnout19":  41.96
+                     },
+                     {
+                         "section":  25,
+                         "name":  "Sezione 25",
+                         "turnout12":  16.9,
+                         "turnout19":  42.35
+                     },
+                     {
+                         "section":  26,
+                         "name":  "Sezione 26",
+                         "turnout12":  15.14,
+                         "turnout19":  43.28
+                     },
+                     {
+                         "section":  27,
+                         "name":  "Sezione 27",
+                         "turnout12":  24.49,
+                         "turnout19":  51.78
+                     },
+                     {
+                         "section":  28,
+                         "name":  "Sezione 28",
+                         "turnout12":  22.98,
+                         "turnout19":  49.71
+                     },
+                     {
+                         "section":  29,
+                         "name":  "Sezione 29",
+                         "turnout12":  20.42,
+                         "turnout19":  48.65
+                     },
+                     {
+                         "section":  30,
+                         "name":  "Sezione 30",
+                         "turnout12":  18.89,
+                         "turnout19":  47.93
+                     },
+                     {
+                         "section":  31,
+                         "name":  "Sezione 31",
+                         "turnout12":  24.72,
+                         "turnout19":  53.95
+                     },
+                     {
+                         "section":  32,
+                         "name":  "Sezione 32",
+                         "turnout12":  18.74,
+                         "turnout19":  48.08
+                     },
+                     {
+                         "section":  33,
+                         "name":  "Sezione 33",
+                         "turnout12":  20.44,
+                         "turnout19":  47.27
+                     },
+                     {
+                         "section":  34,
+                         "name":  "Sezione 34",
+                         "turnout12":  22.09,
+                         "turnout19":  50.6
+                     },
+                     {
+                         "section":  35,
+                         "name":  "Sezione 35",
+                         "turnout12":  22.15,
+                         "turnout19":  52.31
+                     },
+                     {
+                         "section":  36,
+                         "name":  "Sezione 36",
+                         "turnout12":  22.66,
+                         "turnout19":  51.98
+                     },
+                     {
+                         "section":  37,
+                         "name":  "Sezione 37",
+                         "turnout12":  21.18,
+                         "turnout19":  52.01
+                     },
+                     {
+                         "section":  38,
+                         "name":  "Sezione 38",
+                         "turnout12":  23.98,
+                         "turnout19":  23.98
+                     },
+                     {
+                         "section":  39,
+                         "name":  "Sezione 39",
+                         "turnout12":  19.33,
+                         "turnout19":  49.6
+                     },
+                     {
+                         "section":  40,
+                         "name":  "Sezione 40",
+                         "turnout12":  19.24,
+                         "turnout19":  49.44
+                     },
+                     {
+                         "section":  41,
+                         "name":  "Sezione 41",
+                         "turnout12":  21.78,
+                         "turnout19":  51.84
+                     },
+                     {
+                         "section":  42,
+                         "name":  "Sezione 42",
+                         "turnout12":  21.75,
+                         "turnout19":  54.89
+                     },
+                     {
+                         "section":  43,
+                         "name":  "Sezione 43",
+                         "turnout12":  22.49,
+                         "turnout19":  49.57
+                     },
+                     {
+                         "section":  44,
+                         "name":  "Sezione 44",
+                         "turnout12":  22.73,
+                         "turnout19":  53.13
+                     },
+                     {
+                         "section":  45,
+                         "name":  "Sezione 45",
+                         "turnout12":  19.4,
+                         "turnout19":  43.45
+                     },
+                     {
+                         "section":  46,
+                         "name":  "Sezione 46",
+                         "turnout12":  18.27,
+                         "turnout19":  48.58
+                     },
+                     {
+                         "section":  47,
+                         "name":  "Sezione 47",
+                         "turnout12":  18.17,
+                         "turnout19":  44.31
+                     },
+                     {
+                         "section":  48,
+                         "name":  "Sezione 48",
+                         "turnout12":  22.22,
+                         "turnout19":  51.27
+                     },
+                     {
+                         "section":  49,
+                         "name":  "Sezione 49",
+                         "turnout12":  23.07,
+                         "turnout19":  52.66
+                     },
+                     {
+                         "section":  50,
+                         "name":  "Sezione 50",
+                         "turnout12":  21.3,
+                         "turnout19":  49.67
+                     },
+                     {
+                         "section":  51,
+                         "name":  "Sezione 51",
+                         "turnout12":  14.29,
+                         "turnout19":  39.39
+                     },
+                     {
+                         "section":  52,
+                         "name":  "Sezione 52",
+                         "turnout12":  15.21,
+                         "turnout19":  40
+                     },
+                     {
+                         "section":  53,
+                         "name":  "Sezione 53",
+                         "turnout12":  23.01,
+                         "turnout19":  44.84
+                     },
+                     {
+                         "section":  54,
+                         "name":  "Sezione 54",
+                         "turnout12":  18.99,
+                         "turnout19":  44.73
+                     },
+                     {
+                         "section":  55,
+                         "name":  "Sezione 55",
+                         "turnout12":  21.22,
+                         "turnout19":  44.66
+                     },
+                     {
+                         "section":  56,
+                         "name":  "Sezione 56",
+                         "turnout12":  18.34,
+                         "turnout19":  45.84
+                     },
+                     {
+                         "section":  57,
+                         "name":  "Sezione 57",
+                         "turnout12":  19.91,
+                         "turnout19":  46.94
+                     },
+                     {
+                         "section":  58,
+                         "name":  "Sezione 58",
+                         "turnout12":  21.08,
+                         "turnout19":  47.14
+                     },
+                     {
+                         "section":  59,
+                         "name":  "Sezione 59",
+                         "turnout12":  20.08,
+                         "turnout19":  46.68
+                     },
+                     {
+                         "section":  60,
+                         "name":  "Sezione 60",
+                         "turnout12":  17.54,
+                         "turnout19":  51.59
+                     },
+                     {
+                         "section":  61,
+                         "name":  "Sezione 61",
+                         "turnout12":  20.4,
+                         "turnout19":  50.5
+                     },
+                     {
+                         "section":  62,
+                         "name":  "Sezione 62",
+                         "turnout12":  19.26,
+                         "turnout19":  46.71
+                     },
+                     {
+                         "section":  63,
+                         "name":  "Sezione 63",
+                         "turnout12":  13.25,
+                         "turnout19":  48.36
+                     },
+                     {
+                         "section":  64,
+                         "name":  "Sezione 64",
+                         "turnout12":  27.74,
+                         "turnout19":  54.91
+                     },
+                     {
+                         "section":  65,
+                         "name":  "Sezione 65",
+                         "turnout12":  22.47,
+                         "turnout19":  51.27
+                     },
+                     {
+                         "section":  66,
+                         "name":  "Sezione 66",
+                         "turnout12":  24.43,
+                         "turnout19":  48.23
+                     },
+                     {
+                         "section":  67,
+                         "name":  "Sezione 67",
+                         "turnout12":  25.2,
+                         "turnout19":  52.15
+                     },
+                     {
+                         "section":  68,
+                         "name":  "Sezione 68",
+                         "turnout12":  20.29,
+                         "turnout19":  52.17
+                     },
+                     {
+                         "section":  69,
+                         "name":  "Sezione 69",
+                         "turnout12":  22.61,
+                         "turnout19":  53.16
+                     },
+                     {
+                         "section":  70,
+                         "name":  "Sezione 70",
+                         "turnout12":  23.93,
+                         "turnout19":  54.59
+                     },
+                     {
+                         "section":  71,
+                         "name":  "Sezione 71",
+                         "turnout12":  17.77,
+                         "turnout19":  48.86
+                     },
+                     {
+                         "section":  72,
+                         "name":  "Sezione 72",
+                         "turnout12":  20.07,
+                         "turnout19":  49.94
+                     },
+                     {
+                         "section":  73,
+                         "name":  "Sezione 73",
+                         "turnout12":  20.63,
+                         "turnout19":  51.72
+                     },
+                     {
+                         "section":  74,
+                         "name":  "Sezione 74",
+                         "turnout12":  20.89,
+                         "turnout19":  49.56
+                     },
+                     {
+                         "section":  75,
+                         "name":  "Sezione 75",
+                         "turnout12":  21.27,
+                         "turnout19":  51.95
+                     },
+                     {
+                         "section":  76,
+                         "name":  "Sezione 76",
+                         "turnout12":  23,
+                         "turnout19":  48.21
+                     },
+                     {
+                         "section":  77,
+                         "name":  "Sezione 77",
+                         "turnout12":  21.05,
+                         "turnout19":  52.77
+                     },
+                     {
+                         "section":  78,
+                         "name":  "Sezione 78",
+                         "turnout12":  21.25,
+                         "turnout19":  52.68
+                     },
+                     {
+                         "section":  79,
+                         "name":  "Sezione 79",
+                         "turnout12":  19.02,
+                         "turnout19":  50.8
+                     },
+                     {
+                         "section":  80,
+                         "name":  "Sezione 80",
+                         "turnout12":  23.4,
+                         "turnout19":  54.14
+                     },
+                     {
+                         "section":  81,
+                         "name":  "Sezione 81",
+                         "turnout12":  22.54,
+                         "turnout19":  50.81
+                     },
+                     {
+                         "section":  82,
+                         "name":  "Sezione 82",
+                         "turnout12":  21.39,
+                         "turnout19":  54.86
+                     },
+                     {
+                         "section":  83,
+                         "name":  "Sezione 83",
+                         "turnout12":  20.53,
+                         "turnout19":  52.86
+                     },
+                     {
+                         "section":  84,
+                         "name":  "Sezione 84",
+                         "turnout12":  18.67,
+                         "turnout19":  53.01
+                     },
+                     {
+                         "section":  85,
+                         "name":  "Sezione 85",
+                         "turnout12":  21.57,
+                         "turnout19":  50.52
+                     },
+                     {
+                         "section":  86,
+                         "name":  "Sezione 86",
+                         "turnout12":  18.96,
+                         "turnout19":  49.22
+                     },
+                     {
+                         "section":  87,
+                         "name":  "Sezione 87",
+                         "turnout12":  21.79,
+                         "turnout19":  52.55
+                     },
+                     {
+                         "section":  88,
+                         "name":  "Sezione 88",
+                         "turnout12":  18.08,
+                         "turnout19":  42
+                     },
+                     {
+                         "section":  89,
+                         "name":  "Sezione 89",
+                         "turnout12":  23.99,
+                         "turnout19":  51.51
+                     },
+                     {
+                         "section":  90,
+                         "name":  "Sezione 90",
+                         "turnout12":  21.61,
+                         "turnout19":  53.24
+                     },
+                     {
+                         "section":  91,
+                         "name":  "Sezione 91",
+                         "turnout12":  23.5,
+                         "turnout19":  52.87
+                     },
+                     {
+                         "section":  92,
+                         "name":  "Sezione 92",
+                         "turnout12":  22.11,
+                         "turnout19":  55.16
+                     },
+                     {
+                         "section":  93,
+                         "name":  "Sezione 93",
+                         "turnout12":  22.24,
+                         "turnout19":  55.65
+                     },
+                     {
+                         "section":  94,
+                         "name":  "Sezione 94",
+                         "turnout12":  19.02,
+                         "turnout19":  55.94
+                     },
+                     {
+                         "section":  95,
+                         "name":  "Sezione 95",
+                         "turnout12":  22.4,
+                         "turnout19":  51.38
+                     },
+                     {
+                         "section":  96,
+                         "name":  "Sezione 96",
+                         "turnout12":  22.84,
+                         "turnout19":  50.14
+                     },
+                     {
+                         "section":  97,
+                         "name":  "Sezione 97",
+                         "turnout12":  21.07,
+                         "turnout19":  52.98
+                     },
+                     {
+                         "section":  98,
+                         "name":  "Sezione 98",
+                         "turnout12":  21.03,
+                         "turnout19":  50.31
+                     },
+                     {
+                         "section":  99,
+                         "name":  "Sezione 99",
+                         "turnout12":  23.28,
+                         "turnout19":  50.9
+                     },
+                     {
+                         "section":  100,
+                         "name":  "Sezione 100",
+                         "turnout12":  23.39,
+                         "turnout19":  50.9
+                     },
+                     {
+                         "section":  101,
+                         "name":  "Sezione 101",
+                         "turnout12":  23.81,
+                         "turnout19":  52.26
+                     },
+                     {
+                         "section":  102,
+                         "name":  "Sezione 102",
+                         "turnout12":  19.21,
+                         "turnout19":  47.68
+                     },
+                     {
+                         "section":  103,
+                         "name":  "Sezione 103",
+                         "turnout12":  20.12,
+                         "turnout19":  48.92
+                     },
+                     {
+                         "section":  104,
+                         "name":  "Sezione 104",
+                         "turnout12":  19.81,
+                         "turnout19":  50.8
+                     },
+                     {
+                         "section":  105,
+                         "name":  "Sezione 105",
+                         "turnout12":  20.73,
+                         "turnout19":  57.13
+                     },
+                     {
+                         "section":  106,
+                         "name":  "Sezione 106",
+                         "turnout12":  22.02,
+                         "turnout19":  51.26
+                     },
+                     {
+                         "section":  107,
+                         "name":  "Sezione 107",
+                         "turnout12":  22.7,
+                         "turnout19":  54.91
+                     },
+                     {
+                         "section":  108,
+                         "name":  "Sezione 108",
+                         "turnout12":  18.55,
+                         "turnout19":  46.99
+                     },
+                     {
+                         "section":  109,
+                         "name":  "Sezione 109",
+                         "turnout12":  22.81,
+                         "turnout19":  52.16
+                     },
+                     {
+                         "section":  110,
+                         "name":  "Sezione 110",
+                         "turnout12":  23.78,
+                         "turnout19":  49.58
+                     },
+                     {
+                         "section":  111,
+                         "name":  "Sezione 111",
+                         "turnout12":  21.34,
+                         "turnout19":  47.02
+                     },
+                     {
+                         "section":  112,
+                         "name":  "Sezione 112",
+                         "turnout12":  21.43,
+                         "turnout19":  44.84
+                     },
+                     {
+                         "section":  113,
+                         "name":  "Sezione 113",
+                         "turnout12":  21.33,
+                         "turnout19":  56.27
+                     },
+                     {
+                         "section":  114,
+                         "name":  "Sezione 114",
+                         "turnout12":  25.38,
+                         "turnout19":  55.71
+                     },
+                     {
+                         "section":  115,
+                         "name":  "Sezione 115",
+                         "turnout12":  19.49,
+                         "turnout19":  53.19
+                     },
+                     {
+                         "section":  116,
+                         "name":  "Sezione 116",
+                         "turnout12":  18.93,
+                         "turnout19":  53.92
+                     },
+                     {
+                         "section":  117,
+                         "name":  "Sezione 117",
+                         "turnout12":  17,
+                         "turnout19":  41.77
+                     },
+                     {
+                         "section":  118,
+                         "name":  "Sezione 118",
+                         "turnout12":  20.53,
+                         "turnout19":  50.86
+                     },
+                     {
+                         "section":  119,
+                         "name":  "Sezione 119",
+                         "turnout12":  21.51,
+                         "turnout19":  55.57
+                     },
+                     {
+                         "section":  120,
+                         "name":  "Sezione 120",
+                         "turnout12":  18.88,
+                         "turnout19":  54.76
+                     },
+                     {
+                         "section":  121,
+                         "name":  "Sezione 121",
+                         "turnout12":  16.77,
+                         "turnout19":  40.44
+                     },
+                     {
+                         "section":  122,
+                         "name":  "Sezione 122",
+                         "turnout12":  18.54,
+                         "turnout19":  49.54
+                     },
+                     {
+                         "section":  123,
+                         "name":  "Sezione 123",
+                         "turnout12":  20.91,
+                         "turnout19":  49.67
+                     },
+                     {
+                         "section":  124,
+                         "name":  "Sezione 124",
+                         "turnout12":  21.35,
+                         "turnout19":  54.05
+                     },
+                     {
+                         "section":  125,
+                         "name":  "Sezione 125",
+                         "turnout12":  21.64,
+                         "turnout19":  52.49
+                     },
+                     {
+                         "section":  126,
+                         "name":  "Sezione 126",
+                         "turnout12":  20.11,
+                         "turnout19":  51.3
+                     },
+                     {
+                         "section":  127,
+                         "name":  "Sezione 127",
+                         "turnout12":  22.15,
+                         "turnout19":  50.06
+                     },
+                     {
+                         "section":  128,
+                         "name":  "Sezione 128",
+                         "turnout12":  23.62,
+                         "turnout19":  51.25
+                     },
+                     {
+                         "section":  129,
+                         "name":  "Sezione 129",
+                         "turnout12":  22.89,
+                         "turnout19":  49.4
+                     },
+                     {
+                         "section":  130,
+                         "name":  "Sezione 130",
+                         "turnout12":  20.31,
+                         "turnout19":  48.12
+                     },
+                     {
+                         "section":  131,
+                         "name":  "Sezione 131",
+                         "turnout12":  19.33,
+                         "turnout19":  50.52
+                     },
+                     {
+                         "section":  132,
+                         "name":  "Sezione 132",
+                         "turnout12":  23.69,
+                         "turnout19":  52.95
+                     },
+                     {
+                         "section":  133,
+                         "name":  "Sezione 133",
+                         "turnout12":  22.09,
+                         "turnout19":  53.1
+                     },
+                     {
+                         "section":  134,
+                         "name":  "Sezione 134",
+                         "turnout12":  18.59,
+                         "turnout19":  49.57
+                     },
+                     {
+                         "section":  135,
+                         "name":  "Sezione 135",
+                         "turnout12":  22.75,
+                         "turnout19":  55.63
+                     },
+                     {
+                         "section":  136,
+                         "name":  "Sezione 136",
+                         "turnout12":  22.72,
+                         "turnout19":  52.44
+                     },
+                     {
+                         "section":  137,
+                         "name":  "Sezione 137",
+                         "turnout12":  19.81,
+                         "turnout19":  50.67
+                     },
+                     {
+                         "section":  138,
+                         "name":  "Sezione 138",
+                         "turnout12":  21.55,
+                         "turnout19":  52.34
+                     },
+                     {
+                         "section":  139,
+                         "name":  "Sezione 139",
+                         "turnout12":  25.55,
+                         "turnout19":  55.47
+                     },
+                     {
+                         "section":  140,
+                         "name":  "Sezione 140",
+                         "turnout12":  23.49,
+                         "turnout19":  55.69
+                     },
+                     {
+                         "section":  141,
+                         "name":  "Sezione 141",
+                         "turnout12":  18.29,
+                         "turnout19":  48.48
+                     },
+                     {
+                         "section":  142,
+                         "name":  "Sezione 142",
+                         "turnout12":  20.12,
+                         "turnout19":  51.27
+                     },
+                     {
+                         "section":  143,
+                         "name":  "Sezione 143",
+                         "turnout12":  24.46,
+                         "turnout19":  52.86
+                     },
+                     {
+                         "section":  144,
+                         "name":  "Sezione 144",
+                         "turnout12":  22.26,
+                         "turnout19":  49.4
+                     },
+                     {
+                         "section":  145,
+                         "name":  "Sezione 145",
+                         "turnout12":  20.49,
+                         "turnout19":  50.49
+                     },
+                     {
+                         "section":  146,
+                         "name":  "Sezione 146",
+                         "turnout12":  18.75,
+                         "turnout19":  47.84
+                     },
+                     {
+                         "section":  147,
+                         "name":  "Sezione 147",
+                         "turnout12":  18.1,
+                         "turnout19":  48.03
+                     },
+                     {
+                         "section":  148,
+                         "name":  "Sezione 148",
+                         "turnout12":  23.04,
+                         "turnout19":  54.14
+                     },
+                     {
+                         "section":  149,
+                         "name":  "Sezione 149",
+                         "turnout12":  18.73,
+                         "turnout19":  52.18
+                     },
+                     {
+                         "section":  150,
+                         "name":  "Sezione 150",
+                         "turnout12":  24.21,
+                         "turnout19":  49.18
+                     },
+                     {
+                         "section":  151,
+                         "name":  "Sezione 151",
+                         "turnout12":  20.21,
+                         "turnout19":  44.18
+                     },
+                     {
+                         "section":  152,
+                         "name":  "Sezione 152",
+                         "turnout12":  21.74,
+                         "turnout19":  48.35
+                     },
+                     {
+                         "section":  153,
+                         "name":  "Sezione 153",
+                         "turnout12":  20.97,
+                         "turnout19":  50.51
+                     },
+                     {
+                         "section":  154,
+                         "name":  "Sezione 154",
+                         "turnout12":  19.95,
+                         "turnout19":  48.78
+                     },
+                     {
+                         "section":  155,
+                         "name":  "Sezione 155",
+                         "turnout12":  20.12,
+                         "turnout19":  50.4
+                     },
+                     {
+                         "section":  156,
+                         "name":  "Sezione 156",
+                         "turnout12":  24.8,
+                         "turnout19":  54.9
+                     },
+                     {
+                         "section":  157,
+                         "name":  "Sezione 157",
+                         "turnout12":  21.03,
+                         "turnout19":  46.66
+                     },
+                     {
+                         "section":  158,
+                         "name":  "Sezione 158",
+                         "turnout12":  24.22,
+                         "turnout19":  53.76
+                     },
+                     {
+                         "section":  159,
+                         "name":  "Sezione 159",
+                         "turnout12":  21.93,
+                         "turnout19":  47.87
+                     },
+                     {
+                         "section":  160,
+                         "name":  "Sezione 160",
+                         "turnout12":  22.78,
+                         "turnout19":  51.2
+                     },
+                     {
+                         "section":  161,
+                         "name":  "Sezione 161",
+                         "turnout12":  20.63,
+                         "turnout19":  48.08
+                     },
+                     {
+                         "section":  162,
+                         "name":  "Sezione 162",
+                         "turnout12":  22.38,
+                         "turnout19":  53.45
+                     },
+                     {
+                         "section":  163,
+                         "name":  "Sezione 163",
+                         "turnout12":  21.79,
+                         "turnout19":  52.93
+                     },
+                     {
+                         "section":  164,
+                         "name":  "Sezione 164",
+                         "turnout12":  23.91,
+                         "turnout19":  53.4
+                     },
+                     {
+                         "section":  165,
+                         "name":  "Sezione 165",
+                         "turnout12":  24.37,
+                         "turnout19":  54.43
+                     },
+                     {
+                         "section":  166,
+                         "name":  "Sezione 166",
+                         "turnout12":  23.95,
+                         "turnout19":  54.07
+                     },
+                     {
+                         "section":  167,
+                         "name":  "Sezione 167",
+                         "turnout12":  18.5,
+                         "turnout19":  48.46
+                     },
+                     {
+                         "section":  168,
+                         "name":  "Sezione 168",
+                         "turnout12":  21.55,
+                         "turnout19":  51.58
+                     },
+                     {
+                         "section":  169,
+                         "name":  "Sezione 169",
+                         "turnout12":  16.93,
+                         "turnout19":  48.35
+                     },
+                     {
+                         "section":  170,
+                         "name":  "Sezione 170",
+                         "turnout12":  19.03,
+                         "turnout19":  54.73
+                     },
+                     {
+                         "section":  171,
+                         "name":  "Sezione 171",
+                         "turnout12":  19.15,
+                         "turnout19":  51.93
+                     },
+                     {
+                         "section":  172,
+                         "name":  "Sezione 172",
+                         "turnout12":  18.93,
+                         "turnout19":  47.94
+                     },
+                     {
+                         "section":  173,
+                         "name":  "Sezione 173",
+                         "turnout12":  20.29,
+                         "turnout19":  47.72
+                     },
+                     {
+                         "section":  174,
+                         "name":  "Sezione 174",
+                         "turnout12":  22.81,
+                         "turnout19":  51.26
+                     },
+                     {
+                         "section":  175,
+                         "name":  "Sezione 175",
+                         "turnout12":  16.1,
+                         "turnout19":  48.8
+                     },
+                     {
+                         "section":  176,
+                         "name":  "Sezione 176",
+                         "turnout12":  18.64,
+                         "turnout19":  56.27
+                     },
+                     {
+                         "section":  177,
+                         "name":  "Sezione 177",
+                         "turnout12":  13.21,
+                         "turnout19":  40.24
+                     },
+                     {
+                         "section":  178,
+                         "name":  "Sezione 178",
+                         "turnout12":  20.99,
+                         "turnout19":  48.23
+                     },
+                     {
+                         "section":  179,
+                         "name":  "Sezione 179",
+                         "turnout12":  25.1,
+                         "turnout19":  51.47
+                     },
+                     {
+                         "section":  180,
+                         "name":  "Sezione 180",
+                         "turnout12":  20.5,
+                         "turnout19":  50.91
+                     },
+                     {
+                         "section":  181,
+                         "name":  "Sezione 181",
+                         "turnout12":  20.97,
+                         "turnout19":  53.03
+                     },
+                     {
+                         "section":  182,
+                         "name":  "Sezione 182",
+                         "turnout12":  20.8,
+                         "turnout19":  44
+                     },
+                     {
+                         "section":  183,
+                         "name":  "Sezione 183",
+                         "turnout12":  23.57,
+                         "turnout19":  51.56
+                     },
+                     {
+                         "section":  184,
+                         "name":  "Sezione 184",
+                         "turnout12":  18.37,
+                         "turnout19":  43.62
+                     },
+                     {
+                         "section":  185,
+                         "name":  "Sezione 185",
+                         "turnout12":  18.36,
+                         "turnout19":  51.55
+                     },
+                     {
+                         "section":  186,
+                         "name":  "Sezione 186",
+                         "turnout12":  22.96,
+                         "turnout19":  48.3
+                     },
+                     {
+                         "section":  187,
+                         "name":  "Sezione 187",
+                         "turnout12":  18.89,
+                         "turnout19":  50.58
+                     },
+                     {
+                         "section":  188,
+                         "name":  "Sezione 188",
+                         "turnout12":  17.99,
+                         "turnout19":  46.47
+                     },
+                     {
+                         "section":  189,
+                         "name":  "Sezione 189",
+                         "turnout12":  23.43,
+                         "turnout19":  52.32
+                     },
+                     {
+                         "section":  190,
+                         "name":  "Sezione 190",
+                         "turnout12":  20.12,
+                         "turnout19":  42.21
+                     },
+                     {
+                         "section":  191,
+                         "name":  "Sezione 191",
+                         "turnout12":  21.51,
+                         "turnout19":  50.3
+                     },
+                     {
+                         "section":  192,
+                         "name":  "Sezione 192",
+                         "turnout12":  16.62,
+                         "turnout19":  45.11
+                     },
+                     {
+                         "section":  193,
+                         "name":  "Sezione 193",
+                         "turnout12":  22.14,
+                         "turnout19":  50.32
+                     },
+                     {
+                         "section":  194,
+                         "name":  "Sezione 194",
+                         "turnout12":  19.13,
+                         "turnout19":  49.86
+                     },
+                     {
+                         "section":  195,
+                         "name":  "Sezione 195",
+                         "turnout12":  19.89,
+                         "turnout19":  48.32
+                     },
+                     {
+                         "section":  196,
+                         "name":  "Sezione 196",
+                         "turnout12":  20.89,
+                         "turnout19":  53.29
+                     },
+                     {
+                         "section":  197,
+                         "name":  "Sezione 197",
+                         "turnout12":  20.53,
+                         "turnout19":  48.34
+                     },
+                     {
+                         "section":  198,
+                         "name":  "Sezione 198",
+                         "turnout12":  19.3,
+                         "turnout19":  55.33
+                     },
+                     {
+                         "section":  199,
+                         "name":  "Sezione 199",
+                         "turnout12":  22.62,
+                         "turnout19":  51.54
+                     },
+                     {
+                         "section":  200,
+                         "name":  "Sezione 200",
+                         "turnout12":  20.88,
+                         "turnout19":  52.25
+                     },
+                     {
+                         "section":  201,
+                         "name":  "Sezione 201",
+                         "turnout12":  22.88,
+                         "turnout19":  51.01
+                     },
+                     {
+                         "section":  202,
+                         "name":  "Sezione 202",
+                         "turnout12":  21.38,
+                         "turnout19":  54.85
+                     },
+                     {
+                         "section":  203,
+                         "name":  "Sezione 203",
+                         "turnout12":  20.55,
+                         "turnout19":  52.41
+                     },
+                     {
+                         "section":  204,
+                         "name":  "Sezione 204",
+                         "turnout12":  19.83,
+                         "turnout19":  54.34
+                     },
+                     {
+                         "section":  205,
+                         "name":  "Sezione 205",
+                         "turnout12":  13.23,
+                         "turnout19":  52.16
+                     },
+                     {
+                         "section":  206,
+                         "name":  "Sezione 206",
+                         "turnout12":  19.13,
+                         "turnout19":  48.48
+                     },
+                     {
+                         "section":  207,
+                         "name":  "Sezione 207",
+                         "turnout12":  23.39,
+                         "turnout19":  56.42
+                     },
+                     {
+                         "section":  208,
+                         "name":  "Sezione 208",
+                         "turnout12":  20.53,
+                         "turnout19":  47.68
+                     },
+                     {
+                         "section":  209,
+                         "name":  "Sezione 209",
+                         "turnout12":  20.53,
+                         "turnout19":  51.06
+                     },
+                     {
+                         "section":  210,
+                         "name":  "Sezione 210",
+                         "turnout12":  20.98,
+                         "turnout19":  56.22
+                     },
+                     {
+                         "section":  211,
+                         "name":  "Sezione 211",
+                         "turnout12":  19.95,
+                         "turnout19":  48.36
+                     },
+                     {
+                         "section":  212,
+                         "name":  "Sezione 212",
+                         "turnout12":  17.76,
+                         "turnout19":  44.93
+                     },
+                     {
+                         "section":  213,
+                         "name":  "Sezione 213",
+                         "turnout12":  23.81,
+                         "turnout19":  50.28
+                     },
+                     {
+                         "section":  214,
+                         "name":  "Sezione 214",
+                         "turnout12":  21.41,
+                         "turnout19":  51.53
+                     },
+                     {
+                         "section":  215,
+                         "name":  "Sezione 215",
+                         "turnout12":  17.04,
+                         "turnout19":  43.5
+                     },
+                     {
+                         "section":  216,
+                         "name":  "Sezione 216",
+                         "turnout12":  20.99,
+                         "turnout19":  50.13
+                     },
+                     {
+                         "section":  217,
+                         "name":  "Sezione 217",
+                         "turnout12":  21.94,
+                         "turnout19":  50.21
+                     },
+                     {
+                         "section":  218,
+                         "name":  "Sezione 218",
+                         "turnout12":  20.46,
+                         "turnout19":  48.56
+                     },
+                     {
+                         "section":  219,
+                         "name":  "Sezione 219",
+                         "turnout12":  18.75,
+                         "turnout19":  46.22
+                     },
+                     {
+                         "section":  220,
+                         "name":  "Sezione 220",
+                         "turnout12":  22.21,
+                         "turnout19":  50.92
+                     },
+                     {
+                         "section":  221,
+                         "name":  "Sezione 221",
+                         "turnout12":  18.38,
+                         "turnout19":  50.25
+                     },
+                     {
+                         "section":  222,
+                         "name":  "Sezione 222",
+                         "turnout12":  18.98,
+                         "turnout19":  53.78
+                     },
+                     {
+                         "section":  223,
+                         "name":  "Sezione 223",
+                         "turnout12":  20.97,
+                         "turnout19":  48.23
+                     },
+                     {
+                         "section":  224,
+                         "name":  "Sezione 224",
+                         "turnout12":  16.74,
+                         "turnout19":  47.94
+                     },
+                     {
+                         "section":  225,
+                         "name":  "Sezione 225",
+                         "turnout12":  20.32,
+                         "turnout19":  50.81
+                     },
+                     {
+                         "section":  226,
+                         "name":  "Sezione 226",
+                         "turnout12":  16.34,
+                         "turnout19":  47.98
+                     },
+                     {
+                         "section":  227,
+                         "name":  "Sezione 227",
+                         "turnout12":  16.33,
+                         "turnout19":  45.62
+                     },
+                     {
+                         "section":  228,
+                         "name":  "Sezione 228",
+                         "turnout12":  18.78,
+                         "turnout19":  50.5
+                     },
+                     {
+                         "section":  229,
+                         "name":  "Sezione 229",
+                         "turnout12":  20.29,
+                         "turnout19":  54.11
+                     },
+                     {
+                         "section":  230,
+                         "name":  "Sezione 230",
+                         "turnout12":  24.79,
+                         "turnout19":  55.43
+                     },
+                     {
+                         "section":  231,
+                         "name":  "Sezione 231",
+                         "turnout12":  20.22,
+                         "turnout19":  51.25
+                     },
+                     {
+                         "section":  232,
+                         "name":  "Sezione 232",
+                         "turnout12":  19.45,
+                         "turnout19":  51.13
+                     },
+                     {
+                         "section":  233,
+                         "name":  "Sezione 233",
+                         "turnout12":  14.77,
+                         "turnout19":  38.64
+                     },
+                     {
+                         "section":  234,
+                         "name":  "Sezione 234",
+                         "turnout12":  15.98,
+                         "turnout19":  45.31
+                     },
+                     {
+                         "section":  235,
+                         "name":  "Sezione 235",
+                         "turnout12":  15.62,
+                         "turnout19":  39.83
+                     },
+                     {
+                         "section":  236,
+                         "name":  "Sezione 236",
+                         "turnout12":  16.45,
+                         "turnout19":  38.06
+                     },
+                     {
+                         "section":  237,
+                         "name":  "Sezione 237",
+                         "turnout12":  11.92,
+                         "turnout19":  33.29
+                     },
+                     {
+                         "section":  238,
+                         "name":  "Sezione 238",
+                         "turnout12":  19.79,
+                         "turnout19":  47.44
+                     },
+                     {
+                         "section":  239,
+                         "name":  "Sezione 239",
+                         "turnout12":  24.13,
+                         "turnout19":  53.58
+                     },
+                     {
+                         "section":  240,
+                         "name":  "Sezione 240",
+                         "turnout12":  17.06,
+                         "turnout19":  47.38
+                     },
+                     {
+                         "section":  241,
+                         "name":  "Sezione 241",
+                         "turnout12":  18.24,
+                         "turnout19":  49.22
+                     },
+                     {
+                         "section":  242,
+                         "name":  "Sezione 242",
+                         "turnout12":  16.8,
+                         "turnout19":  45.36
+                     },
+                     {
+                         "section":  243,
+                         "name":  "Sezione 243",
+                         "turnout12":  18.65,
+                         "turnout19":  44.06
+                     },
+                     {
+                         "section":  244,
+                         "name":  "Sezione 244",
+                         "turnout12":  20,
+                         "turnout19":  50.28
+                     },
+                     {
+                         "section":  245,
+                         "name":  "Sezione 245",
+                         "turnout12":  18.19,
+                         "turnout19":  46.94
+                     },
+                     {
+                         "section":  246,
+                         "name":  "Sezione 246",
+                         "turnout12":  15.47,
+                         "turnout19":  46.64
+                     },
+                     {
+                         "section":  247,
+                         "name":  "Sezione 247",
+                         "turnout12":  19.03,
+                         "turnout19":  47.72
+                     },
+                     {
+                         "section":  248,
+                         "name":  "Sezione 248",
+                         "turnout12":  14.79,
+                         "turnout19":  48.67
+                     },
+                     {
+                         "section":  249,
+                         "name":  "Sezione 249",
+                         "turnout12":  15.03,
+                         "turnout19":  41.8
+                     },
+                     {
+                         "section":  250,
+                         "name":  "Sezione 250",
+                         "turnout12":  21.27,
+                         "turnout19":  54.23
+                     },
+                     {
+                         "section":  251,
+                         "name":  "Sezione 251",
+                         "turnout12":  15.56,
+                         "turnout19":  41.26
+                     },
+                     {
+                         "section":  252,
+                         "name":  "Sezione 252",
+                         "turnout12":  20.39,
+                         "turnout19":  56.76
+                     },
+                     {
+                         "section":  253,
+                         "name":  "Sezione 253",
+                         "turnout12":  21.81,
+                         "turnout19":  50.34
+                     },
+                     {
+                         "section":  254,
+                         "name":  "Sezione 254",
+                         "turnout12":  22.54,
+                         "turnout19":  49.66
+                     },
+                     {
+                         "section":  255,
+                         "name":  "Sezione 255",
+                         "turnout12":  19.28,
+                         "turnout19":  55.14
+                     },
+                     {
+                         "section":  256,
+                         "name":  "Sezione 256",
+                         "turnout12":  23.4,
+                         "turnout19":  54.79
+                     },
+                     {
+                         "section":  257,
+                         "name":  "Sezione 257",
+                         "turnout12":  22.86,
+                         "turnout19":  53.43
+                     },
+                     {
+                         "section":  258,
+                         "name":  "Sezione 258",
+                         "turnout12":  23.2,
+                         "turnout19":  48.72
+                     },
+                     {
+                         "section":  259,
+                         "name":  "Sezione 259",
+                         "turnout12":  18.99,
+                         "turnout19":  46.23
+                     },
+                     {
+                         "section":  260,
+                         "name":  "Sezione 260",
+                         "turnout12":  22.19,
+                         "turnout19":  49.41
+                     },
+                     {
+                         "section":  261,
+                         "name":  "Sezione 261",
+                         "turnout12":  21.97,
+                         "turnout19":  48.41
+                     },
+                     {
+                         "section":  262,
+                         "name":  "Sezione 262",
+                         "turnout12":  20.85,
+                         "turnout19":  52.38
+                     },
+                     {
+                         "section":  263,
+                         "name":  "Sezione 263",
+                         "turnout12":  24.01,
+                         "turnout19":  52.1
+                     },
+                     {
+                         "section":  264,
+                         "name":  "Sezione 264",
+                         "turnout12":  22.29,
+                         "turnout19":  48.27
+                     },
+                     {
+                         "section":  265,
+                         "name":  "Sezione 265",
+                         "turnout12":  22.5,
+                         "turnout19":  54.47
+                     },
+                     {
+                         "section":  266,
+                         "name":  "Sezione 266",
+                         "turnout12":  25.75,
+                         "turnout19":  52.13
+                     },
+                     {
+                         "section":  267,
+                         "name":  "Sezione 267",
+                         "turnout12":  23.67,
+                         "turnout19":  50.93
+                     },
+                     {
+                         "section":  268,
+                         "name":  "Sezione 268",
+                         "turnout12":  19.83,
+                         "turnout19":  48.62
+                     },
+                     {
+                         "section":  269,
+                         "name":  "Sezione 269",
+                         "turnout12":  21.14,
+                         "turnout19":  50.85
+                     },
+                     {
+                         "section":  270,
+                         "name":  "Sezione 270",
+                         "turnout12":  22.32,
+                         "turnout19":  54.96
+                     },
+                     {
+                         "section":  271,
+                         "name":  "Sezione 271",
+                         "turnout12":  24.55,
+                         "turnout19":  53.56
+                     },
+                     {
+                         "section":  272,
+                         "name":  "Sezione 272",
+                         "turnout12":  22.6,
+                         "turnout19":  53.25
+                     },
+                     {
+                         "section":  273,
+                         "name":  "Sezione 273",
+                         "turnout12":  21.18,
+                         "turnout19":  55.37
+                     },
+                     {
+                         "section":  274,
+                         "name":  "Sezione 274",
+                         "turnout12":  20.41,
+                         "turnout19":  55.27
+                     },
+                     {
+                         "section":  275,
+                         "name":  "Sezione 275",
+                         "turnout12":  19.04,
+                         "turnout19":  54.36
+                     },
+                     {
+                         "section":  276,
+                         "name":  "Sezione 276",
+                         "turnout12":  25.42,
+                         "turnout19":  57.16
+                     },
+                     {
+                         "section":  277,
+                         "name":  "Sezione 277",
+                         "turnout12":  22.28,
+                         "turnout19":  55.84
+                     },
+                     {
+                         "section":  278,
+                         "name":  "Sezione 278",
+                         "turnout12":  22.42,
+                         "turnout19":  56.54
+                     },
+                     {
+                         "section":  279,
+                         "name":  "Sezione 279",
+                         "turnout12":  20.08,
+                         "turnout19":  50.21
+                     },
+                     {
+                         "section":  280,
+                         "name":  "Sezione 280",
+                         "turnout12":  21.47,
+                         "turnout19":  51.6
+                     },
+                     {
+                         "section":  281,
+                         "name":  "Sezione 281",
+                         "turnout12":  27.99,
+                         "turnout19":  51.57
+                     },
+                     {
+                         "section":  282,
+                         "name":  "Sezione 282",
+                         "turnout12":  17.43,
+                         "turnout19":  47.13
+                     },
+                     {
+                         "section":  283,
+                         "name":  "Sezione 283",
+                         "turnout12":  16.37,
+                         "turnout19":  46.44
+                     },
+                     {
+                         "section":  284,
+                         "name":  "Sezione 284",
+                         "turnout12":  18.63,
+                         "turnout19":  51.07
+                     },
+                     {
+                         "section":  285,
+                         "name":  "Sezione 285",
+                         "turnout12":  20.39,
+                         "turnout19":  52.7
+                     },
+                     {
+                         "section":  286,
+                         "name":  "Sezione 286",
+                         "turnout12":  43.14,
+                         "turnout19":  60.48
+                     },
+                     {
+                         "section":  287,
+                         "name":  "Sezione 287",
+                         "turnout12":  23.63,
+                         "turnout19":  51.78
+                     },
+                     {
+                         "section":  288,
+                         "name":  "Sezione 288",
+                         "turnout12":  21.72,
+                         "turnout19":  53.6
+                     },
+                     {
+                         "section":  289,
+                         "name":  "Sezione 289",
+                         "turnout12":  22.51,
+                         "turnout19":  51.77
+                     },
+                     {
+                         "section":  290,
+                         "name":  "Sezione 290",
+                         "turnout12":  21.63,
+                         "turnout19":  47.96
+                     },
+                     {
+                         "section":  291,
+                         "name":  "Sezione 291",
+                         "turnout12":  19.21,
+                         "turnout19":  52.88
+                     },
+                     {
+                         "section":  292,
+                         "name":  "Sezione 292",
+                         "turnout12":  21.32,
+                         "turnout19":  46.08
+                     },
+                     {
+                         "section":  293,
+                         "name":  "Sezione 293",
+                         "turnout12":  20.13,
+                         "turnout19":  54.92
+                     },
+                     {
+                         "section":  294,
+                         "name":  "Sezione 294",
+                         "turnout12":  19.65,
+                         "turnout19":  50.39
+                     },
+                     {
+                         "section":  295,
+                         "name":  "Sezione 295",
+                         "turnout12":  17.99,
+                         "turnout19":  47.75
+                     },
+                     {
+                         "section":  296,
+                         "name":  "Sezione 296",
+                         "turnout12":  25.2,
+                         "turnout19":  55.72
+                     },
+                     {
+                         "section":  297,
+                         "name":  "Sezione 297",
+                         "turnout12":  22.36,
+                         "turnout19":  54.44
+                     },
+                     {
+                         "section":  298,
+                         "name":  "Sezione 298",
+                         "turnout12":  20.47,
+                         "turnout19":  48.49
+                     },
+                     {
+                         "section":  299,
+                         "name":  "Sezione 299",
+                         "turnout12":  16.74,
+                         "turnout19":  51.22
+                     },
+                     {
+                         "section":  300,
+                         "name":  "Sezione 300",
+                         "turnout12":  20.92,
+                         "turnout19":  51.6
+                     },
+                     {
+                         "section":  301,
+                         "name":  "Sezione 301",
+                         "turnout12":  16.78,
+                         "turnout19":  48.01
+                     },
+                     {
+                         "section":  302,
+                         "name":  "Sezione 302",
+                         "turnout12":  20.68,
+                         "turnout19":  49.56
+                     },
+                     {
+                         "section":  303,
+                         "name":  "Sezione 303",
+                         "turnout12":  20.15,
+                         "turnout19":  43.33
+                     },
+                     {
+                         "section":  304,
+                         "name":  "Sezione 304",
+                         "turnout12":  25.89,
+                         "turnout19":  56.63
+                     },
+                     {
+                         "section":  305,
+                         "name":  "Sezione 305",
+                         "turnout12":  20.52,
+                         "turnout19":  52.12
+                     },
+                     {
+                         "section":  306,
+                         "name":  "Sezione 306",
+                         "turnout12":  20.08,
+                         "turnout19":  55.33
+                     },
+                     {
+                         "section":  307,
+                         "name":  "Sezione 307",
+                         "turnout12":  17.62,
+                         "turnout19":  51.74
+                     },
+                     {
+                         "section":  308,
+                         "name":  "Sezione 308",
+                         "turnout12":  18.43,
+                         "turnout19":  50.63
+                     },
+                     {
+                         "section":  309,
+                         "name":  "Sezione 309",
+                         "turnout12":  12.04,
+                         "turnout19":  33.6
+                     },
+                     {
+                         "section":  310,
+                         "name":  "Sezione 310",
+                         "turnout12":  20.44,
+                         "turnout19":  49.93
+                     },
+                     {
+                         "section":  311,
+                         "name":  "Sezione 311",
+                         "turnout12":  20.76,
+                         "turnout19":  42.72
+                     },
+                     {
+                         "section":  312,
+                         "name":  "Sezione 312",
+                         "turnout12":  20.44,
+                         "turnout19":  45.13
+                     },
+                     {
+                         "section":  313,
+                         "name":  "Sezione 313",
+                         "turnout12":  14.55,
+                         "turnout19":  40.61
+                     },
+                     {
+                         "section":  314,
+                         "name":  "Sezione 314",
+                         "turnout12":  20.4,
+                         "turnout19":  48.88
+                     },
+                     {
+                         "section":  315,
+                         "name":  "Sezione 315",
+                         "turnout12":  22.69,
+                         "turnout19":  48.08
+                     },
+                     {
+                         "section":  316,
+                         "name":  "Sezione 316",
+                         "turnout12":  21.12,
+                         "turnout19":  42.74
+                     },
+                     {
+                         "section":  317,
+                         "name":  "Sezione 317",
+                         "turnout12":  19.48,
+                         "turnout19":  53.8
+                     },
+                     {
+                         "section":  318,
+                         "name":  "Sezione 318",
+                         "turnout12":  23.5,
+                         "turnout19":  51.92
+                     },
+                     {
+                         "section":  319,
+                         "name":  "Sezione 319",
+                         "turnout12":  20.46,
+                         "turnout19":  51.55
+                     },
+                     {
+                         "section":  320,
+                         "name":  "Sezione 320",
+                         "turnout12":  23.59,
+                         "turnout19":  56.03
+                     },
+                     {
+                         "section":  321,
+                         "name":  "Sezione 321",
+                         "turnout12":  22.25,
+                         "turnout19":  54.22
+                     },
+                     {
+                         "section":  322,
+                         "name":  "Sezione 322",
+                         "turnout12":  20.97,
+                         "turnout19":  48.39
+                     },
+                     {
+                         "section":  323,
+                         "name":  "Sezione 323",
+                         "turnout12":  17.53,
+                         "turnout19":  42.53
+                     },
+                     {
+                         "section":  324,
+                         "name":  "Sezione 324",
+                         "turnout12":  19.2,
+                         "turnout19":  48.14
+                     },
+                     {
+                         "section":  325,
+                         "name":  "Sezione 325",
+                         "turnout12":  21.39,
+                         "turnout19":  48.3
+                     },
+                     {
+                         "section":  326,
+                         "name":  "Sezione 326",
+                         "turnout12":  16.31,
+                         "turnout19":  40.1
+                     },
+                     {
+                         "section":  327,
+                         "name":  "Sezione 327",
+                         "turnout12":  21.53,
+                         "turnout19":  50.61
+                     },
+                     {
+                         "section":  328,
+                         "name":  "Sezione 328",
+                         "turnout12":  19.54,
+                         "turnout19":  49.16
+                     },
+                     {
+                         "section":  329,
+                         "name":  "Sezione 329",
+                         "turnout12":  19.66,
+                         "turnout19":  50.98
+                     },
+                     {
+                         "section":  330,
+                         "name":  "Sezione 330",
+                         "turnout12":  21.59,
+                         "turnout19":  48.73
+                     },
+                     {
+                         "section":  331,
+                         "name":  "Sezione 331",
+                         "turnout12":  22.15,
+                         "turnout19":  49.68
+                     },
+                     {
+                         "section":  332,
+                         "name":  "Sezione 332",
+                         "turnout12":  20.31,
+                         "turnout19":  54.72
+                     },
+                     {
+                         "section":  333,
+                         "name":  "Sezione 333",
+                         "turnout12":  18.79,
+                         "turnout19":  50.61
+                     },
+                     {
+                         "section":  334,
+                         "name":  "Sezione 334",
+                         "turnout12":  17.64,
+                         "turnout19":  45.3
+                     },
+                     {
+                         "section":  335,
+                         "name":  "Sezione 335",
+                         "turnout12":  15.63,
+                         "turnout19":  45.49
+                     },
+                     {
+                         "section":  336,
+                         "name":  "Sezione 336",
+                         "turnout12":  18.11,
+                         "turnout19":  45.92
+                     },
+                     {
+                         "section":  337,
+                         "name":  "Sezione 337",
+                         "turnout12":  20.83,
+                         "turnout19":  46.48
+                     },
+                     {
+                         "section":  338,
+                         "name":  "Sezione 338",
+                         "turnout12":  18.9,
+                         "turnout19":  43.52
+                     },
+                     {
+                         "section":  339,
+                         "name":  "Sezione 339",
+                         "turnout12":  17.95,
+                         "turnout19":  45.04
+                     },
+                     {
+                         "section":  340,
+                         "name":  "Sezione 340",
+                         "turnout12":  19.97,
+                         "turnout19":  52.25
+                     },
+                     {
+                         "section":  341,
+                         "name":  "Sezione 341",
+                         "turnout12":  15.83,
+                         "turnout19":  47.01
+                     },
+                     {
+                         "section":  342,
+                         "name":  "Sezione 342",
+                         "turnout12":  21.36,
+                         "turnout19":  50.82
+                     },
+                     {
+                         "section":  343,
+                         "name":  "Sezione 343",
+                         "turnout12":  25.3,
+                         "turnout19":  54.73
+                     },
+                     {
+                         "section":  344,
+                         "name":  "Sezione 344",
+                         "turnout12":  18.14,
+                         "turnout19":  45.98
+                     },
+                     {
+                         "section":  345,
+                         "name":  "Sezione 345",
+                         "turnout12":  16.53,
+                         "turnout19":  45.11
+                     },
+                     {
+                         "section":  346,
+                         "name":  "Sezione 346",
+                         "turnout12":  23.19,
+                         "turnout19":  50.11
+                     },
+                     {
+                         "section":  347,
+                         "name":  "Sezione 347",
+                         "turnout12":  17.22,
+                         "turnout19":  43.32
+                     },
+                     {
+                         "section":  348,
+                         "name":  "Sezione 348",
+                         "turnout12":  13.85,
+                         "turnout19":  38.85
+                     },
+                     {
+                         "section":  349,
+                         "name":  "Sezione 349",
+                         "turnout12":  15.7,
+                         "turnout19":  43.16
+                     },
+                     {
+                         "section":  350,
+                         "name":  "Sezione 350",
+                         "turnout12":  16.51,
+                         "turnout19":  48.07
+                     },
+                     {
+                         "section":  351,
+                         "name":  "Sezione 351",
+                         "turnout12":  19,
+                         "turnout19":  47.57
+                     },
+                     {
+                         "section":  352,
+                         "name":  "Sezione 352",
+                         "turnout12":  19.32,
+                         "turnout19":  46.75
+                     },
+                     {
+                         "section":  353,
+                         "name":  "Sezione 353",
+                         "turnout12":  10.71,
+                         "turnout19":  25.03
+                     },
+                     {
+                         "section":  354,
+                         "name":  "Sezione 354",
+                         "turnout12":  20.52,
+                         "turnout19":  54.82
+                     }
+                 ]
+}

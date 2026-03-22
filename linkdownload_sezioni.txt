@@ -1,0 +1,8 @@
+"roma":"https://elezioni.interno.gov.it/risultati/20260322/referendum/votanti/italia/01120700900",
+"milano":"https://elezioni.interno.gov.it/risultati/20260322/referendum/votanti/italia/01030491450",
+"napoli":"https://elezioni.interno.gov.it/risultati/20260322/referendum/votanti/italia/01150510490",
+"bologna":"https://elezioni.interno.gov.it/risultati/20260322/referendum/votanti/italia/01080130060",
+"torino":"https://elezioni.interno.gov.it/risultati/20260322/referendum/votanti/italia/01010812620",
+"genova":"https://elezioni.interno.gov.it/risultati/20260322/referendum/votanti/italia/01070340250",
+"firenze":"https://elezioni.interno.gov.it/risultati/20260322/referendum/votanti/italia/01090300170",
+"palermo":"https://elezioni.interno.gov.it/risultati/20260322/referendum/votanti/italia/01190550510"
