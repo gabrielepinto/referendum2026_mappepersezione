@@ -62,6 +62,22 @@ const CITY_CONFIG = [
     geojsonDownload: "geoframes/precincts_palermo_bulding.geojson",
     turnoutCsvDownload: "downloads_csv/2026-03-22_palermo.csv",
     turnoutJsonDownload: "data/turnout_palermo.json"
+  },
+  {
+    slug: "reggiocalabria",
+    label: "Reggio Calabria",
+    dataScript: "city-data/reggiocalabria.bundle.js",
+    geojsonDownload: "geoframes/precincts_reggiocalabria_bulding.geojson",
+    turnoutCsvDownload: "downloads_csv/2026-03-22_reggiocalabria.csv",
+    turnoutJsonDownload: "data/turnout_reggiocalabria.json"
+  },
+  {
+    slug: "taranto",
+    label: "Taranto",
+    dataScript: "city-data/taranto.bundle.js",
+    geojsonDownload: "geoframes/precincts_taranto_bulding.geojson",
+    turnoutCsvDownload: "downloads_csv/2026-03-22_taranto.csv",
+    turnoutJsonDownload: "data/turnout_taranto.json"
   }
 ];
 

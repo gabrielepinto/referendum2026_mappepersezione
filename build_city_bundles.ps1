@@ -9,7 +9,7 @@ if (-not (Test-Path $cityDir)) {
   New-Item -ItemType Directory -Path $cityDir | Out-Null
 }
 
-$cities = "roma","milano","napoli","bologna","torino","genova","firenze","palermo"
+$cities = "roma","milano","napoli","bologna","torino","genova","firenze","palermo","reggiocalabria","taranto"
 
 foreach ($city in $cities) {
   $geoPath = Join-Path $geoDir ("precincts_{0}_bulding.geojson" -f $city)
