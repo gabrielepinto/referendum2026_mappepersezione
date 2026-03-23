@@ -12,7 +12,7 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body data-view="turnout">
+  <body data-view="results">
     <main class="page-shell">
       <section class="hero">
         <p class="hero-kicker">Referendum 2026</p>
@@ -43,8 +43,8 @@
           </a>
         </div>
         <nav class="view-tabs" aria-label="Selezione vista">
-          <a class="view-tab is-active" href="./index.html">Affluenza</a>
-          <a class="view-tab" href="./results.html">Risultati</a>
+          <a class="view-tab" href="./affluenza.html">Affluenza</a>
+          <a class="view-tab is-active" href="./index.html">Risultati</a>
         </nav>
       </section>
 
@@ -58,22 +58,16 @@
 
       <section class="legend-panel">
         <div>
-          <p class="legend-label">Scala colori</p>
-          <h2>Affluenza per sezione</h2>
+          <p class="legend-label">Vista pronta</p>
+          <h2>Scrutinio per sezione</h2>
         </div>
-        <div class="legend-scale" aria-label="Legenda affluenza">
-          <span><i style="background:#243b6b"></i><small>&lt; 25%</small></span>
-          <span><i style="background:#2f6c9e"></i><small>25-35%</small></span>
-          <span><i style="background:#2f9f9c"></i><small>35-45%</small></span>
-          <span><i style="background:#57c785"></i><small>45-55%</small></span>
-          <span><i style="background:#b8f28f"></i><small>&gt; 55%</small></span>
-        </div>
+        <div id="external-legend-scale"></div>
       </section>
 
       <section class="map-card">
         <header>
           <div>
-            <p class="city-kicker" id="current-kicker">Sezioni elettorali</p>
+            <p class="city-kicker" id="current-kicker">Risultati per sezione</p>
             <h2 id="current-city">Roma</h2>
           </div>
           <p class="map-status" id="status-current">Caricamento...</p>

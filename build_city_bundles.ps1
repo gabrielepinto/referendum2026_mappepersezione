@@ -31,9 +31,15 @@ foreach ($city in $cities) {
   }
 
   $turnoutPath = Join-Path $dataDir ("turnout_{0}.json" -f $city)
-  $sections = @()
+  $resultsPath = Join-Path $dataDir ("results_{0}.json" -f $city)
+  $politiche2022Path = Join-Path $dataDir ("politiche2022_{0}.json" -f $city)
   $turnoutSlots = @()
-  $updatedAt = $null
+  $turnoutUpdatedAt = $null
+  $resultsUpdatedAt = $null
+  $politiche2022UpdatedAt = $null
+  $turnoutLookup = @{}
+  $resultsLookup = @{}
+  $politiche2022Lookup = @{}
 
   if (Test-Path $turnoutPath) {
     $turnoutPayload = Get-Content $turnoutPath -Raw | ConvertFrom-Json
@@ -49,7 +55,7 @@ foreach ($city in $cities) {
       $turnoutSlots = @($slotOrder | Where-Object { $normalizedDeclared -contains $_ })
     }
     if ($turnoutPayload.updated_at) {
-      $updatedAt = [string]$turnoutPayload.updated_at
+      $turnoutUpdatedAt = [string]$turnoutPayload.updated_at
     }
 
     foreach ($row in $turnoutPayload.sections) {
@@ -76,12 +82,72 @@ foreach ($city in $cities) {
         $turnoutSlots = @($slotOrder | Where-Object { $turnout.Keys -contains $_ })
       }
 
-      $sections += [pscustomobject]@{
+      $turnoutLookup[[int]$row.section] = [pscustomobject]@{
         section = [int]$row.section
         name = [string]$row.name
         turnout = $turnout
-        results = $null
       }
+    }
+  }
+
+  if (Test-Path $resultsPath) {
+    $resultsPayload = Get-Content $resultsPath -Raw | ConvertFrom-Json
+    if ($resultsPayload.updated_at) {
+      $resultsUpdatedAt = [string]$resultsPayload.updated_at
+    }
+
+    foreach ($row in $resultsPayload.sections) {
+      $resultsLookup[[int]$row.section] = [pscustomobject]@{
+        section = [int]$row.section
+        name = [string]$row.name
+        results = [ordered]@{
+          yes = if ($null -ne $row.results.yes) { [double]$row.results.yes } else { $null }
+          no = if ($null -ne $row.results.no) { [double]$row.results.no } else { $null }
+          yes_pct = if ($null -ne $row.results.yes_pct) { [double]$row.results.yes_pct } else { $null }
+          no_pct = if ($null -ne $row.results.no_pct) { [double]$row.results.no_pct } else { $null }
+          blank = if ($null -ne $row.results.blank) { [double]$row.results.blank } else { $null }
+          null = if ($null -ne $row.results.null) { [double]$row.results.null } else { $null }
+          turnout = if ($null -ne $row.results.turnout) { [double]$row.results.turnout } else { $null }
+        }
+      }
+    }
+  }
+
+  if (Test-Path $politiche2022Path) {
+    $politiche2022Payload = Get-Content $politiche2022Path -Raw | ConvertFrom-Json
+    if ($politiche2022Payload.updated_at) {
+      $politiche2022UpdatedAt = [string]$politiche2022Payload.updated_at
+    }
+
+    foreach ($row in $politiche2022Payload.sections) {
+      $politiche2022Lookup[[int]$row.section] = [pscustomobject]@{
+        section = [int]$row.section
+        politiche2022 = [ordered]@{
+          cdx_votes = if ($null -ne $row.politiche2022.cdx_votes) { [double]$row.politiche2022.cdx_votes } else { $null }
+          cdx_pct = if ($null -ne $row.politiche2022.cdx_pct) { [double]$row.politiche2022.cdx_pct } else { $null }
+          csxm5s_votes = if ($null -ne $row.politiche2022.csxm5s_votes) { [double]$row.politiche2022.csxm5s_votes } else { $null }
+          csxm5s_pct = if ($null -ne $row.politiche2022.csxm5s_pct) { [double]$row.politiche2022.csxm5s_pct } else { $null }
+          total_votes = if ($null -ne $row.politiche2022.total_votes) { [double]$row.politiche2022.total_votes } else { $null }
+          turnout = if ($null -ne $row.politiche2022.turnout) { [double]$row.politiche2022.turnout } else { $null }
+        }
+      }
+    }
+  }
+
+  $allSections = @($turnoutLookup.Keys + $resultsLookup.Keys + $politiche2022Lookup.Keys | Sort-Object -Unique)
+  $sections = @()
+
+  foreach ($sectionId in $allSections) {
+    $turnoutRow = if ($turnoutLookup.ContainsKey($sectionId)) { $turnoutLookup[$sectionId] } else { $null }
+    $resultsRow = if ($resultsLookup.ContainsKey($sectionId)) { $resultsLookup[$sectionId] } else { $null }
+    $politiche2022Row = if ($politiche2022Lookup.ContainsKey($sectionId)) { $politiche2022Lookup[$sectionId] } else { $null }
+
+    $sections += [pscustomobject]@{
+      section = [int]$sectionId
+      name = if ($turnoutRow) { [string]$turnoutRow.name } elseif ($resultsRow) { [string]$resultsRow.name } else { "SEZIONE $sectionId" }
+      turnout = if ($turnoutRow) { $turnoutRow.turnout } else { $null }
+      results = if ($resultsRow) { $resultsRow.results } else { $null }
+      politiche2022 = if ($politiche2022Row) { $politiche2022Row.politiche2022 } else { $null }
     }
   }
 
@@ -89,8 +155,12 @@ foreach ($city in $cities) {
     slug = $city
     meta = [ordered]@{
       turnout_slots = $turnoutSlots
-      results_available = $false
-      updated_at = if ($updatedAt) { $updatedAt } else { "2026-03-23T00:00:00+01:00" }
+      results_available = $resultsLookup.Count -gt 0
+      politiche2022_available = $politiche2022Lookup.Count -gt 0
+      turnout_updated_at = $turnoutUpdatedAt
+      results_updated_at = $resultsUpdatedAt
+      politiche2022_updated_at = $politiche2022UpdatedAt
+      updated_at = if ($resultsUpdatedAt) { $resultsUpdatedAt } elseif ($turnoutUpdatedAt) { $turnoutUpdatedAt } else { "2026-03-23T00:00:00+01:00" }
     }
     sections = $sections
     geojson = Get-Content $geoPath -Raw | ConvertFrom-Json

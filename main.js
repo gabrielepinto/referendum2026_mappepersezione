@@ -5,7 +5,9 @@ const CITY_CONFIG = [
     dataScript: "city-data/roma.bundle.js",
     geojsonDownload: "geoframes/precincts_roma_bulding.geojson",
     turnoutCsvDownload: "downloads_csv/2026-03-22_roma.csv",
-    turnoutJsonDownload: "data/turnout_roma.json"
+    turnoutJsonDownload: "data/turnout_roma.json",
+    resultsCsvDownload: "scrutini_sezioni/roma.csv",
+    resultsJsonDownload: "data/results_roma.json"
   },
   {
     slug: "milano",
@@ -13,7 +15,9 @@ const CITY_CONFIG = [
     dataScript: "city-data/milano.bundle.js",
     geojsonDownload: "geoframes/precincts_milano_bulding.geojson",
     turnoutCsvDownload: "downloads_csv/2026-03-22_milano.csv",
-    turnoutJsonDownload: "data/turnout_milano.json"
+    turnoutJsonDownload: "data/turnout_milano.json",
+    resultsCsvDownload: "scrutini_sezioni/milano.csv",
+    resultsJsonDownload: "data/results_milano.json"
   },
   {
     slug: "napoli",
@@ -21,7 +25,9 @@ const CITY_CONFIG = [
     dataScript: "city-data/napoli.bundle.js",
     geojsonDownload: "geoframes/precincts_napoli_bulding.geojson",
     turnoutCsvDownload: "downloads_csv/2026-03-22_napoli.csv",
-    turnoutJsonDownload: "data/turnout_napoli.json"
+    turnoutJsonDownload: "data/turnout_napoli.json",
+    resultsCsvDownload: "scrutini_sezioni/napoli.csv",
+    resultsJsonDownload: "data/results_napoli.json"
   },
   {
     slug: "bologna",
@@ -29,7 +35,9 @@ const CITY_CONFIG = [
     dataScript: "city-data/bologna.bundle.js",
     geojsonDownload: "geoframes/precincts_bologna_bulding.geojson",
     turnoutCsvDownload: "downloads_csv/2026-03-22_bologna.csv",
-    turnoutJsonDownload: "data/turnout_bologna.json"
+    turnoutJsonDownload: "data/turnout_bologna.json",
+    resultsCsvDownload: "scrutini_sezioni/bologna.csv",
+    resultsJsonDownload: "data/results_bologna.json"
   },
   {
     slug: "torino",
@@ -37,7 +45,9 @@ const CITY_CONFIG = [
     dataScript: "city-data/torino.bundle.js",
     geojsonDownload: "geoframes/precincts_torino_bulding.geojson",
     turnoutCsvDownload: "downloads_csv/2026-03-22_torino.csv",
-    turnoutJsonDownload: "data/turnout_torino.json"
+    turnoutJsonDownload: "data/turnout_torino.json",
+    resultsCsvDownload: "scrutini_sezioni/torino.csv",
+    resultsJsonDownload: "data/results_torino.json"
   },
   {
     slug: "genova",
@@ -45,7 +55,9 @@ const CITY_CONFIG = [
     dataScript: "city-data/genova.bundle.js",
     geojsonDownload: "geoframes/precincts_genova_bulding.geojson",
     turnoutCsvDownload: "downloads_csv/2026-03-22_genova.csv",
-    turnoutJsonDownload: "data/turnout_genova.json"
+    turnoutJsonDownload: "data/turnout_genova.json",
+    resultsCsvDownload: "scrutini_sezioni/genova.csv",
+    resultsJsonDownload: "data/results_genova.json"
   },
   {
     slug: "firenze",
@@ -53,7 +65,9 @@ const CITY_CONFIG = [
     dataScript: "city-data/firenze.bundle.js",
     geojsonDownload: "geoframes/precincts_firenze_bulding.geojson",
     turnoutCsvDownload: "downloads_csv/2026-03-22_firenze.csv",
-    turnoutJsonDownload: "data/turnout_firenze.json"
+    turnoutJsonDownload: "data/turnout_firenze.json",
+    resultsCsvDownload: "scrutini_sezioni/firenze.csv",
+    resultsJsonDownload: "data/results_firenze.json"
   },
   {
     slug: "palermo",
@@ -61,7 +75,9 @@ const CITY_CONFIG = [
     dataScript: "city-data/palermo.bundle.js",
     geojsonDownload: "geoframes/precincts_palermo_bulding.geojson",
     turnoutCsvDownload: "downloads_csv/2026-03-22_palermo.csv",
-    turnoutJsonDownload: "data/turnout_palermo.json"
+    turnoutJsonDownload: "data/turnout_palermo.json",
+    resultsCsvDownload: "scrutini_sezioni/palermo.csv",
+    resultsJsonDownload: "data/results_palermo.json"
   },
   {
     slug: "reggiocalabria",
@@ -69,7 +85,9 @@ const CITY_CONFIG = [
     dataScript: "city-data/reggiocalabria.bundle.js",
     geojsonDownload: "geoframes/precincts_reggiocalabria_bulding.geojson",
     turnoutCsvDownload: "downloads_csv/2026-03-22_reggiocalabria.csv",
-    turnoutJsonDownload: "data/turnout_reggiocalabria.json"
+    turnoutJsonDownload: "data/turnout_reggiocalabria.json",
+    resultsCsvDownload: "scrutini_sezioni/reggiocalabria.csv",
+    resultsJsonDownload: "data/results_reggiocalabria.json"
   },
   {
     slug: "taranto",
@@ -77,7 +95,9 @@ const CITY_CONFIG = [
     dataScript: "city-data/taranto.bundle.js",
     geojsonDownload: "geoframes/precincts_taranto_bulding.geojson",
     turnoutCsvDownload: "downloads_csv/2026-03-22_taranto.csv",
-    turnoutJsonDownload: "data/turnout_taranto.json"
+    turnoutJsonDownload: "data/turnout_taranto.json",
+    resultsCsvDownload: "scrutini_sezioni/taranto.csv",
+    resultsJsonDownload: "data/results_taranto.json"
   }
 ];
 
@@ -91,10 +111,36 @@ const TURNOUT_SLOTS = [
   { key: "mon_15", label: "Lunedì ore 15" }
 ];
 const TURNOUT_SLOT_LABELS = Object.fromEntries(TURNOUT_SLOTS.map((slot) => [slot.key, slot.label]));
+const RESULTS_LEGEND = [
+  { color: "#6e122d", label: "Sì sotto 30%" },
+  { color: "#8b1e3f", label: "Sì 30-38%" },
+  { color: "#b33d4b", label: "Sì 38-44%" },
+  { color: "#d65454", label: "Sì 44-48%" },
+  { color: "#ece8e5", label: "Equilibrio 48-52%" },
+  { color: "#bfe7cf", label: "Sì 52-56%" },
+  { color: "#86d0a8", label: "Sì 56-62%" },
+  { color: "#4cad7a", label: "Sì 62-70%" },
+  { color: "#18794e", label: "Sì 70-78%" },
+  { color: "#0b4f33", label: "Sì oltre 78%" }
+];
+const TURNOUT_LEGEND = [
+  { color: "#1c2f57", label: "< 40%" },
+  { color: "#243b6b", label: "40-44%" },
+  { color: "#2a527f", label: "44-48%" },
+  { color: "#2f6c9e", label: "48-52%" },
+  { color: "#2d879d", label: "52-56%" },
+  { color: "#2f9f9c", label: "56-60%" },
+  { color: "#43b58e", label: "60-64%" },
+  { color: "#57c785", label: "64-68%" },
+  { color: "#86de89", label: "68-72%" },
+  { color: "#b8f28f", label: "> 72%" }
+];
 
 let currentMap = null;
 let currentLayer = null;
 let currentCitySlug = DEFAULT_CITY;
+let legendControl = null;
+let legendNode = null;
 
 function getCityConfig(slug) {
   return CITY_CONFIG.find((city) => city.slug === slug) || CITY_CONFIG[0];
@@ -160,14 +206,52 @@ function updateHeader(city) {
 
 function renderDownloads(city) {
   const container = document.getElementById("downloads-panel");
-  const turnoutLabel = VIEW_MODE === "results" ? "Dati risultati" : "CSV affluenza";
+  const dataCsv = VIEW_MODE === "results" ? city.resultsCsvDownload : city.turnoutCsvDownload;
+  const dataJson = VIEW_MODE === "results" ? city.resultsJsonDownload : city.turnoutJsonDownload;
+  const csvLabel = VIEW_MODE === "results" ? "CSV risultati" : "CSV affluenza";
   const jsonLabel = VIEW_MODE === "results" ? "JSON risultati" : "JSON affluenza";
 
   container.innerHTML = [
     `<a class="download-link" href="${city.geojsonDownload}" download>Scarica poligoni GeoJSON</a>`,
-    `<a class="download-link" href="${city.turnoutCsvDownload}" download>${turnoutLabel}</a>`,
-    `<a class="download-link" href="${city.turnoutJsonDownload}" download>${jsonLabel}</a>`
+    `<a class="download-link" href="${dataCsv}" download>${csvLabel}</a>`,
+    `<a class="download-link" href="${dataJson}" download>${jsonLabel}</a>`
   ].join("");
+}
+
+function renderLegendContent() {
+  const rows = VIEW_MODE === "results" ? RESULTS_LEGEND : TURNOUT_LEGEND;
+  const title = VIEW_MODE === "results" ? "Risultati" : "Affluenza";
+
+  return [
+    `<strong>${title}</strong>`,
+    ...rows.map(
+      (row) =>
+        `<div class="legend-row"><span class="legend-swatch" style="background:${row.color}"></span><span>${row.label}</span></div>`
+    )
+  ].join("");
+}
+
+function renderLegendScaleHtml(rows, ariaLabel) {
+  return `<div class="legend-scale" aria-label="${ariaLabel}">${rows
+    .map((row) => `<span><i style="background:${row.color}"></i><small>${row.label}</small></span>`)
+    .join("")}</div>`;
+}
+
+function updateExternalLegend() {
+  const panel = document.getElementById("external-legend-scale");
+  if (!panel) {
+    return;
+  }
+
+  const rows = VIEW_MODE === "results" ? RESULTS_LEGEND : TURNOUT_LEGEND;
+  const label = VIEW_MODE === "results" ? "Legenda risultati" : "Legenda affluenza";
+  panel.innerHTML = renderLegendScaleHtml(rows, label);
+}
+
+function updateLegend() {
+  if (legendNode) {
+    legendNode.innerHTML = renderLegendContent();
+  }
 }
 
 function ensureMap() {
@@ -189,22 +273,16 @@ function ensureMap() {
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
     }).addTo(currentMap);
 
-    const legend = L.control({ position: "bottomright" });
-    legend.onAdd = function () {
-      const div = L.DomUtil.create("div", "map-legend");
-      div.innerHTML = [
-        "<strong>Affluenza</strong>",
-        '<div class="legend-row"><span class="legend-swatch" style="background:#243b6b"></span><span>&lt; 25%</span></div>',
-        '<div class="legend-row"><span class="legend-swatch" style="background:#2f6c9e"></span><span>25-35%</span></div>',
-        '<div class="legend-row"><span class="legend-swatch" style="background:#2f9f9c"></span><span>35-45%</span></div>',
-        '<div class="legend-row"><span class="legend-swatch" style="background:#57c785"></span><span>45-55%</span></div>',
-        '<div class="legend-row"><span class="legend-swatch" style="background:#b8f28f"></span><span>&gt; 55%</span></div>'
-      ].join("");
-      return div;
+    legendControl = L.control({ position: "bottomright" });
+    legendControl.onAdd = function () {
+      legendNode = L.DomUtil.create("div", "map-legend");
+      legendNode.innerHTML = renderLegendContent();
+      return legendNode;
     };
-    legend.addTo(currentMap);
+    legendControl.addTo(currentMap);
   }
 
+  updateLegend();
   return currentMap;
 }
 
@@ -261,15 +339,43 @@ function formatPercent(value) {
   return `${value.toFixed(2).replace(".", ",")}%`;
 }
 
+function formatCount(value) {
+  if (typeof value !== "number" || Number.isNaN(value)) {
+    return "n.d.";
+  }
+  return new Intl.NumberFormat("it-IT", { maximumFractionDigits: 0 }).format(value);
+}
+
 function colorFromTurnout(value) {
   if (typeof value !== "number" || Number.isNaN(value)) {
     return "#94a3b8";
   }
-  if (value < 25) return "#243b6b";
-  if (value < 35) return "#2f6c9e";
-  if (value < 45) return "#2f9f9c";
-  if (value < 55) return "#57c785";
+  if (value < 40) return "#1c2f57";
+  if (value < 44) return "#243b6b";
+  if (value < 48) return "#2a527f";
+  if (value < 52) return "#2f6c9e";
+  if (value < 56) return "#2d879d";
+  if (value < 60) return "#2f9f9c";
+  if (value < 64) return "#43b58e";
+  if (value < 68) return "#57c785";
+  if (value < 72) return "#86de89";
   return "#b8f28f";
+}
+
+function colorFromYesShare(value) {
+  if (typeof value !== "number" || Number.isNaN(value)) {
+    return "#94a3b8";
+  }
+  if (value < 30) return "#6e122d";
+  if (value < 38) return "#8b1e3f";
+  if (value < 44) return "#b33d4b";
+  if (value < 48) return "#d65454";
+  if (value < 52) return "#ece8e5";
+  if (value < 56) return "#bfe7cf";
+  if (value < 62) return "#86d0a8";
+  if (value < 70) return "#4cad7a";
+  if (value < 78) return "#18794e";
+  return "#0b4f33";
 }
 
 function getLatestTurnoutSlot(slots) {
@@ -296,18 +402,41 @@ function getLatestTurnoutValue(record, activeSlot) {
   return latestSlot ? turnout[latestSlot] : null;
 }
 
+function getResultsRecord(record) {
+  return record?.results || null;
+}
+
+function getPolitiche2022Record(record) {
+  return record?.politiche2022 || null;
+}
+
 function styleFeature(feature, lookup, activeSlot) {
   const section = Number(feature?.properties?.SEZIONE);
   const record = lookup.get(section);
-  const turnoutValue = getLatestTurnoutValue(record, activeSlot);
 
   return {
     color: "rgba(18, 28, 38, 0.18)",
     weight: 0.12,
     opacity: 0.25,
-    fillColor: VIEW_MODE === "results" ? "#3b4654" : colorFromTurnout(turnoutValue),
-    fillOpacity: VIEW_MODE === "results" ? 0.35 : 0.84
+    fillColor:
+      VIEW_MODE === "results"
+        ? colorFromYesShare(getResultsRecord(record)?.yes_pct)
+        : colorFromTurnout(getLatestTurnoutValue(record, activeSlot)),
+    fillOpacity: VIEW_MODE === "results" ? 0.88 : 0.84
   };
+}
+
+function getLatestTurnoutLine(record) {
+  const turnout = normalizeTurnoutRecord(record);
+  const latestSlot = getLatestTurnoutSlot(Object.keys(turnout).filter((slot) => turnout[slot] != null));
+  if (!latestSlot) {
+    const fallbackTurnout = getResultsRecord(record)?.turnout;
+    if (typeof fallbackTurnout === "number" && !Number.isNaN(fallbackTurnout)) {
+      return `Affluenza: ${formatPercent(fallbackTurnout)}`;
+    }
+    return "Affluenza: n.d.";
+  }
+  return `Affluenza - ${getSlotLabel(latestSlot)}: ${formatPercent(turnout[latestSlot])}`;
 }
 
 function popupHtml(cityLabel, feature, lookup, cityAverages, latestCitySlot) {
@@ -320,10 +449,22 @@ function popupHtml(cityLabel, feature, lookup, cityAverages, latestCitySlot) {
   };
 
   if (VIEW_MODE === "results") {
+    const results = getResultsRecord(record) || {};
+    const politiche2022 = getPolitiche2022Record(record);
+    const storicoLine = politiche2022
+      ? `Risultati Politiche 2022, CDX: ${formatPercent(politiche2022.cdx_pct)}, CSX+M5S: ${formatPercent(
+          politiche2022.csxm5s_pct
+        )}`
+      : "Risultati Politiche 2022: n.d.";
     return [
       `<strong>${cityLabel}</strong>`,
       `Sezione: ${record.name}`,
-      "Scrutinio non ancora disponibile"
+      `Sì: ${formatPercent(results.yes_pct)}`,
+      `No: ${formatPercent(results.no_pct)}`,
+      `Schede bianche: ${formatCount(results.blank)}`,
+      `Schede nulle: ${formatCount(results.null)}`,
+      getLatestTurnoutLine(record),
+      `(${storicoLine})`
     ].join("<br>");
   }
 
@@ -368,6 +509,35 @@ function inferAvailableTurnoutSlots(payload) {
   return getOrderedSlots(Array.from(found));
 }
 
+function inferResultsAvailable(payload) {
+  if (payload?.meta?.results_available) {
+    return true;
+  }
+
+  const sections = Array.isArray(payload?.sections) ? payload.sections : [];
+  return sections.some((section) => {
+    const results = getResultsRecord(section);
+    return results && (
+      typeof results.yes_pct === "number" ||
+      typeof results.no_pct === "number" ||
+      typeof results.yes === "number" ||
+      typeof results.no === "number"
+    );
+  });
+}
+
+function inferResultsPartial(payload) {
+  const sections = Array.isArray(payload?.sections) ? payload.sections : [];
+  return sections.some((section) => {
+    const results = getResultsRecord(section);
+    return results && (
+      typeof results.blank === "number" ||
+      typeof results.null === "number" ||
+      typeof results.turnout === "number"
+    );
+  });
+}
+
 function renderLayer(city, payload) {
   const map = ensureMap();
   const lookup = buildLookup(payload);
@@ -391,7 +561,12 @@ function renderLayer(city, payload) {
   map.fitBounds(currentLayer.getBounds(), { padding: [10, 10], maxZoom: 12 });
 
   if (VIEW_MODE === "results") {
-    setStatus("Pagina risultati pronta");
+    const label = inferResultsAvailable(payload)
+      ? "Scrutinio disponibile"
+      : inferResultsPartial(payload)
+        ? "Scrutinio parziale"
+        : "Scrutinio non ancora disponibile";
+    setStatus(label);
   } else {
     const label = availableSlots.length
       ? `Affluenza aggiornata: ${availableSlots.map((slot) => getSlotLabel(slot)).join(", ")}`
@@ -406,6 +581,7 @@ async function loadCity(slug) {
   renderCityTabs();
   updateHeader(city);
   renderDownloads(city);
+  updateExternalLegend();
   setStatus("Caricamento...");
 
   try {
