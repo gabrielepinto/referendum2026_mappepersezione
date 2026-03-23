@@ -139,8 +139,6 @@ const TURNOUT_LEGEND = [
 let currentMap = null;
 let currentLayer = null;
 let currentCitySlug = DEFAULT_CITY;
-let legendControl = null;
-let legendNode = null;
 
 function getCityConfig(slug) {
   return CITY_CONFIG.find((city) => city.slug === slug) || CITY_CONFIG[0];
@@ -249,9 +247,7 @@ function updateExternalLegend() {
 }
 
 function updateLegend() {
-  if (legendNode) {
-    legendNode.innerHTML = renderLegendContent();
-  }
+  return;
 }
 
 function ensureMap() {
@@ -273,16 +269,8 @@ function ensureMap() {
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
     }).addTo(currentMap);
 
-    legendControl = L.control({ position: "bottomright" });
-    legendControl.onAdd = function () {
-      legendNode = L.DomUtil.create("div", "map-legend");
-      legendNode.innerHTML = renderLegendContent();
-      return legendNode;
-    };
-    legendControl.addTo(currentMap);
   }
 
-  updateLegend();
   return currentMap;
 }
 
