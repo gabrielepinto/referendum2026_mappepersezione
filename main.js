@@ -83,6 +83,14 @@ const CITY_CONFIG = [
 
 const VIEW_MODE = document.body.dataset.view || "turnout";
 const DEFAULT_CITY = "roma";
+const TURNOUT_SLOTS = [
+  { key: "sun_12", label: "Domenica ore 12" },
+  { key: "sun_19", label: "Domenica ore 19" },
+  { key: "sun_23", label: "Domenica ore 23" },
+  { key: "mon_12", label: "Lunedì ore 12" },
+  { key: "mon_15", label: "Lunedì ore 15" }
+];
+const TURNOUT_SLOT_LABELS = Object.fromEntries(TURNOUT_SLOTS.map((slot) => [slot.key, slot.label]));
 
 let currentMap = null;
 let currentLayer = null;
@@ -117,10 +125,31 @@ function renderCityTabs() {
 }
 
 function getSlotLabel(slot) {
-  if (slot === "12") return "Domenica ore 12";
-  if (slot === "19") return "Domenica ore 19";
-  if (slot === "15") return "Lunedì ore 15";
-  return `Ore ${slot}`;
+  return TURNOUT_SLOT_LABELS[slot] || slot;
+}
+
+function normalizeLegacySlot(slot) {
+  if (slot === "12") return "sun_12";
+  if (slot === "19") return "sun_19";
+  if (slot === "23") return "sun_23";
+  if (slot === "15") return "mon_15";
+  return slot;
+}
+
+function normalizeTurnoutRecord(record) {
+  const turnout = record?.turnout || {};
+  const normalized = {};
+
+  Object.entries(turnout).forEach(([slot, value]) => {
+    normalized[normalizeLegacySlot(slot)] = value;
+  });
+
+  return normalized;
+}
+
+function getOrderedSlots(slots = []) {
+  const normalized = new Set(slots.map((slot) => normalizeLegacySlot(slot)));
+  return TURNOUT_SLOTS.map((slot) => slot.key).filter((slotKey) => normalized.has(slotKey));
 }
 
 function updateHeader(city) {
@@ -201,28 +230,23 @@ function loadCityDataScript(city) {
 }
 
 function turnoutRecordToLines(record) {
-  const turnout = record?.turnout || {};
-  return [
-    `${getSlotLabel("12")}: ${formatPercent(turnout["12"])}`,
-    `${getSlotLabel("19")}: ${formatPercent(turnout["19"])}`,
-    `${getSlotLabel("15")}: ${formatPercent(turnout["15"])}`
-  ];
+  const turnout = normalizeTurnoutRecord(record);
+  return TURNOUT_SLOTS.map((slot) => `${slot.label}: ${formatPercent(turnout[slot.key])}`);
 }
 
 function computeCityAverages(lookup) {
-  const slots = ["12", "19", "15"];
   const averages = {};
 
-  slots.forEach((slot) => {
+  TURNOUT_SLOTS.forEach((slot) => {
     const values = [];
     lookup.forEach((record) => {
-      const value = record?.turnout?.[slot];
+      const value = normalizeTurnoutRecord(record)[slot.key];
       if (typeof value === "number" && !Number.isNaN(value)) {
         values.push(value);
       }
     });
 
-    averages[slot] = values.length
+    averages[slot.key] = values.length
       ? values.reduce((sum, value) => sum + value, 0) / values.length
       : null;
   });
@@ -248,18 +272,34 @@ function colorFromTurnout(value) {
   return "#b8f28f";
 }
 
-function getLatestTurnoutValue(record) {
-  const turnout = record?.turnout || {};
-  if (typeof turnout["15"] === "number" && !Number.isNaN(turnout["15"])) return turnout["15"];
-  if (typeof turnout["19"] === "number" && !Number.isNaN(turnout["19"])) return turnout["19"];
-  if (typeof turnout["12"] === "number" && !Number.isNaN(turnout["12"])) return turnout["12"];
-  return null;
+function getLatestTurnoutSlot(slots) {
+  const ordered = getOrderedSlots(slots);
+  return ordered.length ? ordered[ordered.length - 1] : null;
 }
 
-function styleFeature(feature, lookup) {
+function getTurnoutValueForSlot(record, slot) {
+  if (!slot) {
+    return null;
+  }
+  const turnout = normalizeTurnoutRecord(record);
+  const value = turnout[slot];
+  return typeof value === "number" && !Number.isNaN(value) ? value : null;
+}
+
+function getLatestTurnoutValue(record, activeSlot) {
+  if (activeSlot) {
+    return getTurnoutValueForSlot(record, activeSlot);
+  }
+
+  const turnout = normalizeTurnoutRecord(record);
+  const latestSlot = getLatestTurnoutSlot(Object.keys(turnout));
+  return latestSlot ? turnout[latestSlot] : null;
+}
+
+function styleFeature(feature, lookup, activeSlot) {
   const section = Number(feature?.properties?.SEZIONE);
   const record = lookup.get(section);
-  const turnoutValue = getLatestTurnoutValue(record);
+  const turnoutValue = getLatestTurnoutValue(record, activeSlot);
 
   return {
     color: "rgba(18, 28, 38, 0.18)",
@@ -270,12 +310,12 @@ function styleFeature(feature, lookup) {
   };
 }
 
-function popupHtml(cityLabel, feature, lookup, cityAverages) {
+function popupHtml(cityLabel, feature, lookup, cityAverages, latestCitySlot) {
   const section = Number(feature?.properties?.SEZIONE);
   const record = lookup.get(section) || {
     section,
     name: `SEZIONE ${section}`,
-    turnout: { "12": null, "15": null, "19": null },
+    turnout: { sun_12: null, sun_19: null, sun_23: null, mon_12: null, mon_15: null },
     results: null
   };
 
@@ -291,9 +331,9 @@ function popupHtml(cityLabel, feature, lookup, cityAverages) {
     `<strong>${cityLabel}</strong>`,
     `Sezione: ${record.name}`,
     ...turnoutRecordToLines(record),
-    `Media in città - Domenica ore 12: ${formatPercent(cityAverages["12"])}`,
-    `Media in città - Domenica ore 19: ${formatPercent(cityAverages["19"])}`,
-    `Media in città - Lunedì ore 15: ${formatPercent(cityAverages["15"])}`
+    latestCitySlot
+      ? `Media in città - ${getSlotLabel(latestCitySlot)}: ${formatPercent(cityAverages[latestCitySlot])}`
+      : "Media in città: n.d."
   ].join("<br>");
 }
 
@@ -311,13 +351,13 @@ function buildLookup(payload) {
 function inferAvailableTurnoutSlots(payload) {
   const declared = Array.isArray(payload?.meta?.turnout_slots) ? payload.meta.turnout_slots : [];
   if (declared.length) {
-    return declared;
+    return getOrderedSlots(declared);
   }
 
   const found = new Set();
   const sections = Array.isArray(payload?.sections) ? payload.sections : [];
   sections.forEach((section) => {
-    const turnout = section?.turnout || {};
+    const turnout = normalizeTurnoutRecord(section);
     Object.entries(turnout).forEach(([slot, value]) => {
       if (typeof value === "number" && !Number.isNaN(value)) {
         found.add(slot);
@@ -325,13 +365,15 @@ function inferAvailableTurnoutSlots(payload) {
     });
   });
 
-  return Array.from(found).sort((a, b) => Number(a) - Number(b));
+  return getOrderedSlots(Array.from(found));
 }
 
 function renderLayer(city, payload) {
   const map = ensureMap();
   const lookup = buildLookup(payload);
   const cityAverages = computeCityAverages(lookup);
+  const availableSlots = inferAvailableTurnoutSlots(payload);
+  const latestCitySlot = getLatestTurnoutSlot(availableSlots);
 
   if (currentLayer) {
     currentMap.removeLayer(currentLayer);
@@ -340,9 +382,9 @@ function renderLayer(city, payload) {
 
   currentLayer = L.geoJSON(payload.geojson, {
     smoothFactor: 0,
-    style: (feature) => styleFeature(feature, lookup),
+    style: (feature) => styleFeature(feature, lookup, latestCitySlot),
     onEachFeature: (feature, layer) => {
-      layer.bindPopup(popupHtml(city.label, feature, lookup, cityAverages));
+      layer.bindPopup(popupHtml(city.label, feature, lookup, cityAverages, latestCitySlot));
     }
   }).addTo(map);
 
@@ -351,7 +393,6 @@ function renderLayer(city, payload) {
   if (VIEW_MODE === "results") {
     setStatus("Pagina risultati pronta");
   } else {
-    const availableSlots = inferAvailableTurnoutSlots(payload);
     const label = availableSlots.length
       ? `Affluenza aggiornata: ${availableSlots.map((slot) => getSlotLabel(slot)).join(", ")}`
       : "Affluenza disponibile";
