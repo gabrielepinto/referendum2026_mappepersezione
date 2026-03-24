@@ -111,18 +111,6 @@ const TURNOUT_SLOTS = [
   { key: "mon_15", label: "Lunedì ore 15" }
 ];
 const TURNOUT_SLOT_LABELS = Object.fromEntries(TURNOUT_SLOTS.map((slot) => [slot.key, slot.label]));
-const RESULTS_LEGEND = [
-  { color: "#6e122d", label: "Sì sotto 30%" },
-  { color: "#8b1e3f", label: "Sì 30-38%" },
-  { color: "#b33d4b", label: "Sì 38-44%" },
-  { color: "#d65454", label: "Sì 44-48%" },
-  { color: "#ece8e5", label: "Equilibrio 48-52%" },
-  { color: "#bfe7cf", label: "Sì 52-56%" },
-  { color: "#86d0a8", label: "Sì 56-62%" },
-  { color: "#4cad7a", label: "Sì 62-70%" },
-  { color: "#18794e", label: "Sì 70-78%" },
-  { color: "#0b4f33", label: "Sì oltre 78%" }
-];
 const TURNOUT_LEGEND = [
   { color: "#1c2f57", label: "< 40%" },
   { color: "#243b6b", label: "40-44%" },
@@ -139,6 +127,25 @@ const TURNOUT_LEGEND = [
 let currentMap = null;
 let currentLayer = null;
 let currentCitySlug = DEFAULT_CITY;
+let currentResultsAverage = null;
+
+function getResultsLegend(cityAverage = 60) {
+  const avg = typeof cityAverage === "number" && !Number.isNaN(cityAverage) ? Number(cityAverage.toFixed(1)) : 60;
+  const avgPlus4 = Number((avg + 4).toFixed(1));
+  const avgPlus8 = Number((avg + 8).toFixed(1));
+
+  return [
+    { color: "#1f4e9e", label: "No sotto 42%" },
+    { color: "#3b73c7", label: "No 42-46%" },
+    { color: "#6d8fe6", label: "No 46-50%" },
+    { color: "#b33fb8", label: "No 50-54%" },
+    { color: "#d84db7", label: "No 54-58%" },
+    { color: "#f0619b", label: `No 58-${avg}%` },
+    { color: "#f28f38", label: `No sopra media città (${avg}-${avgPlus4}%)` },
+    { color: "#f6bf3a", label: `No ${avgPlus4}-${avgPlus8}%` },
+    { color: "#f3eb57", label: `No oltre ${avgPlus8}%` }
+  ];
+}
 
 function getCityConfig(slug) {
   return CITY_CONFIG.find((city) => city.slug === slug) || CITY_CONFIG[0];
@@ -217,7 +224,7 @@ function renderDownloads(city) {
 }
 
 function renderLegendContent() {
-  const rows = VIEW_MODE === "results" ? RESULTS_LEGEND : TURNOUT_LEGEND;
+  const rows = VIEW_MODE === "results" ? getResultsLegend(currentResultsAverage) : TURNOUT_LEGEND;
   const title = VIEW_MODE === "results" ? "Risultati" : "Affluenza";
 
   return [
@@ -241,7 +248,7 @@ function updateExternalLegend() {
     return;
   }
 
-  const rows = VIEW_MODE === "results" ? RESULTS_LEGEND : TURNOUT_LEGEND;
+  const rows = VIEW_MODE === "results" ? getResultsLegend(currentResultsAverage) : TURNOUT_LEGEND;
   const label = VIEW_MODE === "results" ? "Legenda risultati" : "Legenda affluenza";
   panel.innerHTML = renderLegendScaleHtml(rows, label);
 }
@@ -320,6 +327,19 @@ function computeCityAverages(lookup) {
   return averages;
 }
 
+function computeCityResultAverage(lookup) {
+  const values = [];
+
+  lookup.forEach((record) => {
+    const value = getResultsRecord(record)?.no_pct;
+    if (typeof value === "number" && !Number.isNaN(value)) {
+      values.push(value);
+    }
+  });
+
+  return values.length ? values.reduce((sum, value) => sum + value, 0) / values.length : null;
+}
+
 function formatPercent(value) {
   if (typeof value !== "number" || Number.isNaN(value)) {
     return "n.d.";
@@ -350,20 +370,24 @@ function colorFromTurnout(value) {
   return "#b8f28f";
 }
 
-function colorFromYesShare(value) {
+function colorFromNoShare(value, cityAverage = 60) {
   if (typeof value !== "number" || Number.isNaN(value)) {
     return "#94a3b8";
   }
-  if (value < 30) return "#6e122d";
-  if (value < 38) return "#8b1e3f";
-  if (value < 44) return "#b33d4b";
-  if (value < 48) return "#d65454";
-  if (value < 52) return "#ece8e5";
-  if (value < 56) return "#bfe7cf";
-  if (value < 62) return "#86d0a8";
-  if (value < 70) return "#4cad7a";
-  if (value < 78) return "#18794e";
-  return "#0b4f33";
+  const avg = typeof cityAverage === "number" && !Number.isNaN(cityAverage) ? cityAverage : 60;
+  const avgStart = Math.max(58, avg);
+  const avgPlus4 = avgStart + 4;
+  const avgPlus8 = avgStart + 8;
+
+  if (value < 42) return "#1f4e9e";
+  if (value < 46) return "#3b73c7";
+  if (value < 50) return "#6d8fe6";
+  if (value < 54) return "#b33fb8";
+  if (value < 58) return "#d84db7";
+  if (value < avgStart) return "#f0619b";
+  if (value < avgPlus4) return "#f28f38";
+  if (value < avgPlus8) return "#f6bf3a";
+  return "#f3eb57";
 }
 
 function getLatestTurnoutSlot(slots) {
@@ -398,18 +422,19 @@ function getPolitiche2022Record(record) {
   return record?.politiche2022 || null;
 }
 
-function styleFeature(feature, lookup, activeSlot) {
+function styleFeature(feature, lookup, activeSlot, resultsAverage) {
   const section = Number(feature?.properties?.SEZIONE);
   const record = lookup.get(section);
+  const fillColor =
+    VIEW_MODE === "results"
+      ? colorFromNoShare(getResultsRecord(record)?.no_pct, resultsAverage)
+      : colorFromTurnout(getLatestTurnoutValue(record, activeSlot));
 
   return {
-    color: "rgba(18, 28, 38, 0.18)",
-    weight: 0.12,
-    opacity: 0.25,
-    fillColor:
-      VIEW_MODE === "results"
-        ? colorFromYesShare(getResultsRecord(record)?.yes_pct)
-        : colorFromTurnout(getLatestTurnoutValue(record, activeSlot)),
+    color: fillColor,
+    weight: 0.28,
+    opacity: 0.9,
+    fillColor,
     fillOpacity: VIEW_MODE === "results" ? 0.88 : 0.84
   };
 }
@@ -530,6 +555,7 @@ function renderLayer(city, payload) {
   const map = ensureMap();
   const lookup = buildLookup(payload);
   const cityAverages = computeCityAverages(lookup);
+  currentResultsAverage = computeCityResultAverage(lookup);
   const availableSlots = inferAvailableTurnoutSlots(payload);
   const latestCitySlot = getLatestTurnoutSlot(availableSlots);
 
@@ -540,13 +566,13 @@ function renderLayer(city, payload) {
 
   currentLayer = L.geoJSON(payload.geojson, {
     smoothFactor: 0,
-    style: (feature) => styleFeature(feature, lookup, latestCitySlot),
+    style: (feature) => styleFeature(feature, lookup, latestCitySlot, currentResultsAverage),
     onEachFeature: (feature, layer) => {
       layer.bindPopup(popupHtml(city.label, feature, lookup, cityAverages, latestCitySlot));
     }
   }).addTo(map);
 
-  map.fitBounds(currentLayer.getBounds(), { padding: [10, 10], maxZoom: 12 });
+  map.fitBounds(currentLayer.getBounds(), { padding: [10, 10], maxZoom: 14 });
 
   if (VIEW_MODE === "results") {
     const label = inferResultsAvailable(payload)
