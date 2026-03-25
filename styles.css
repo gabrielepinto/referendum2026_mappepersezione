@@ -313,6 +313,14 @@ a {
   box-shadow: var(--shadow);
 }
 
+.site-footnote {
+  flex-basis: 100%;
+  margin-top: 8px;
+  font-size: 0.73rem;
+  line-height: 1.55;
+  color: color-mix(in srgb, var(--muted) 90%, white 10%);
+}
+
 .site-footer p {
   margin: 0;
 }
